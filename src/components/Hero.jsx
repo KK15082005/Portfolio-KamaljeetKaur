@@ -116,13 +116,23 @@ export default function Hero() {
         <div className="hero-visual">
           <div className="portrait-container">
             
-            {/* Elegant Rectangular Image Frame */}
+            {/* Elegant Shaped Image Frame */}
             <div className="portrait-frame">
               <img 
                 src={personalInfo.profileImage} 
                 alt={personalInfo.name} 
                 className="portrait-img"
               />
+              <div className="portrait-gradient-overlay"></div>
+
+              {/* Floating Role Card on Profile Picture */}
+              <div className="portrait-floating-card">
+                <span className="floating-dot"></span>
+                <div className="floating-card-body">
+                  <span className="floating-card-tag">CURRENT ROLE</span>
+                  <span className="floating-card-text">Full Stack Intern @ VenueBook</span>
+                </div>
+              </div>
             </div>
 
             {/* Exactly Two Compact Badges (Positioned cleanly without covering face) */}
@@ -134,14 +144,6 @@ export default function Hero() {
             <div className="portrait-badge badge-bottom-left">
               <Terminal size={14} className="text-cyan" />
               <span>Java DSA</span>
-            </div>
-
-            {/* Tasteful Current-Role Caption Below Portrait */}
-            <div className="portrait-caption">
-              <span className="caption-dot"></span>
-              <div className="caption-text">
-                <span className="caption-label">Current Role:</span> Full Stack Developer Intern @ VenueBook
-              </div>
             </div>
 
           </div>
