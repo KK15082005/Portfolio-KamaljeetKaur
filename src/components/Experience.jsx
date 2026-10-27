@@ -38,7 +38,8 @@ export default function Experience() {
               onClick={() => setActiveTab('experience')}
             >
               <Briefcase size={16} />
-              <span>Work & Internships ({experiencesData.length})</span>
+              <span className="tab-label-desktop">Work & Internships ({experiencesData.length})</span>
+              <span className="tab-label-mobile">Experience ({experiencesData.length})</span>
             </button>
             <button 
               className={`tab-pill-btn ${activeTab === 'education' ? 'active' : ''}`}
@@ -52,7 +53,8 @@ export default function Experience() {
               onClick={() => setActiveTab('achievements')}
             >
               <Award size={16} />
-              <span>Achievements ({achievementsData.length})</span>
+              <span className="tab-label-desktop">Achievements ({achievementsData.length})</span>
+              <span className="tab-label-mobile">Awards ({achievementsData.length})</span>
             </button>
           </div>
         </div>
