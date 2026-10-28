@@ -67,7 +67,7 @@ I'm continuing to improve the design, refine the user experience, and update the
 ## Connect With Me
 
 - **GitHub:** https://github.com/KK15082005
-- **LinkedIn:** Add your LinkedIn profile URL here
+- **LinkedIn:** https://www.linkedin.com/in/kamaljeet-kaur-98248a2b9/
 - **Portfolio:** https://jade-ganache-49939d.netlify.app/
 
 Thanks for checking out my portfolio!
