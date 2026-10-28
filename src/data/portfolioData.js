@@ -80,20 +80,20 @@ export const skillsData = {
 export const experiencesData = [
   {
     id: "venuebook",
-    role: "Full Stack Developer Intern – Founding Engineering Team",
+    role: "Full Stack Developer Intern",
     company: "VenueBook Hospitality & Events Pvt. Ltd.",
     period: "Aug 2026 – Present",
     type: "Internship",
     badge: "Current Role",
-    color: "#6366f1",
+    color: "#38bdf8",
     highlights: [
-      "Contributed as part of the founding engineering team, owning features end-to-end across frontend, backend, and database layers with direct involvement in product decisions.",
-      "Built 5+ responsive, reusable UI components using React.js, JavaScript, and modern styling, replacing static pages across the platform's core booking flow.",
-      "Spearheaded API Development and integrated Microservices using Node.js, Express.js, and PHP, powering 5+ core product workflows.",
-      "Optimized MongoDB and SQL data access patterns, reducing redundant queries by 25% through schema analysis.",
-      "Applied advanced debugging to resolve 10+ production bugs and maintained comprehensive software documentation."
+      "Contributing as part of the founding engineering team, building and maintaining full-stack product features using React.js, Node.js, and MongoDB.",
+      "Developing responsive, modular UI components that modernize core venue booking workflows.",
+      "Building and integrating RESTful APIs and backend services using Express.js and Node.js to power core business workflows.",
+      "Optimizing MongoDB queries and data access patterns to improve application response times and reduce redundant database hits.",
+      "Debugging technical issues, performing code maintenance, and writing clear technical documentation."
     ],
-    tech: ["React.js", "Node.js", "Express.js", "MongoDB", "PHP", "Microservices"]
+    tech: ["React.js", "Node.js", "Express.js", "MongoDB", "REST APIs", "Microservices"]
   },
   {
     id: "stealth-ta",
@@ -102,56 +102,56 @@ export const experiencesData = [
     period: "Aug 2026 – Present",
     type: "Teaching & Mentorship",
     badge: "Mentorship",
-    color: "#06b6d4",
+    color: "#38bdf8",
     highlights: [
-      "Guided over 100+ students through Java Data Structure and Algorithm curriculum.",
-      "Conducted 250+ one-on-one doubt-resolution sessions, boosting average student test scores by 15 points.",
-      "Conducted 150+ code reviews and interview-oriented mock sessions, helping students strengthen Problem Solving, Logical Thinking, and Debugging skills."
+      "Mentored 100+ engineering students in Java Data Structures and Algorithms, covering core conceptual foundations and problem-solving techniques.",
+      "Conducted one-on-one doubt-resolution sessions focusing on recursion, arrays, strings, trees, and algorithmic optimization.",
+      "Performed detailed code reviews and problem-solving walkthroughs to help students write clean, efficient, and edge-case-resilient code."
     ],
-    tech: ["Java", "Data Structures", "Algorithms", "Code Review", "Mentorship"]
+    tech: ["Java", "Data Structures", "Algorithms", "Code Review", "Problem Solving"]
   },
   {
     id: "nexturn",
     role: "Head of Corporate Relations",
-    company: "Nexturn Placement Cell (IITM)",
+    company: "Nexturn Placement Cell",
     period: "2024 – Present",
     type: "Leadership",
     badge: "Leadership",
     color: "#10b981",
     highlights: [
-      "Lead a team of 10+ members to build strong industry collaborations and campus partnerships.",
-      "Managed industry outreach, recruiter relationships, and placement & internship initiatives.",
-      "Fostered professional growth, soft skills development, and department alignment."
+      "Led student coordinator teams in managing corporate outreach, recruiter communication, and campus engagement drives.",
+      "Coordinated industry partnership initiatives, placement drives, and career guidance workshops for students.",
+      "Fostered structured communication channels between hiring managers and campus departments."
     ],
-    tech: ["Corporate Relations", "Team Leadership", "Strategic Outreach", "Event Management"]
+    tech: ["Team Leadership", "Corporate Outreach", "Event Coordination", "Stakeholder Relations"]
   },
   {
     id: "simran-faculty",
-    role: "Coaching Faculty",
+    role: "STEM Faculty & Tutor",
     company: "Simran Coaching Center",
-    period: "April 2025 – Present",
+    period: "April 2024 – Present",
     type: "Academic Mentorship",
     badge: "Tutoring",
     color: "#f59e0b",
     highlights: [
-      "Guided 19+ students from grades 6–10 in Mathematics & Science.",
-      "Focused on conceptual clarity, logical thinking, problem-solving skills, and student self-confidence through personalized mentoring."
+      "Instructed secondary school students in Mathematics and Science, strengthening fundamental logical reasoning and problem solving.",
+      "Designed tailored practice sets and conducted periodic assessments to build student competence and confidence."
     ],
-    tech: ["STEM Education", "Conceptual Logic", "Mentoring"]
+    tech: ["Mathematics", "Logical Reasoning", "Curriculum Design", "Mentoring"]
   },
   {
     id: "winzera",
-    role: "Business Developer",
+    role: "Business Development Associate",
     company: "Winzera Pvt. Ltd.",
     period: "Oct 2023 – Jan 2025",
-    type: "Business Strategy",
+    type: "Professional Experience",
     badge: "Prior Experience",
-    color: "#ec4899",
+    color: "#64748b",
     highlights: [
-      "Handled business outreach, client acquisition, and client relationship management.",
-      "Gained key insights into cross-functional business execution and customer communication."
+      "Managed business outreach, prospective partner acquisition, and professional communication.",
+      "Collaborated across teams to understand product execution, client onboarding, and market requirements."
     ],
-    tech: ["Business Strategy", "Client Relations", "Market Research"]
+    tech: ["Business Outreach", "Client Communication", "Market Research"]
   }
 ];
 
