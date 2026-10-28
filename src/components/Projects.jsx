@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { initialProjectsData } from '../data/portfolioData';
 import ProjectModal from './ProjectModal';
 import AddProjectModal from './AddProjectModal';
@@ -9,10 +9,9 @@ import {
   Search, 
   Plus, 
   TrendingUp, 
-  Layers, 
   ArrowUpRight, 
-  SlidersHorizontal,
-  Trash2
+  Trash2,
+  AlertCircle
 } from 'lucide-react';
 import { Github } from './BrandIcons';
 
@@ -35,7 +34,7 @@ export default function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
   const [showAddModal, setShowAddModal] = useState(false);
 
-  const categories = ['All', 'AI & Full-Stack', 'Full-Stack', 'Frontend', 'Leadership & Web'];
+  const categories = ['All', 'AI & Full-Stack', 'Full-Stack', 'Frontend'];
 
   // Handle adding project
   const handleAddProject = (newProject) => {
@@ -85,13 +84,13 @@ export default function Projects() {
         <div className="section-header">
           <div className="section-chip">
             <FolderGit2 size={14} />
-            <span>Featured Portfolio Work</span>
+            <span>Featured Engineering Work</span>
           </div>
           <h2 className="section-title">
-            Engineered with <span>Impact & Scalability</span>
+            Key Full-Stack & <span>AI Projects</span>
           </h2>
           <p className="section-desc">
-            Explore full-stack platforms, AI systems, and responsive user interfaces built with modern best practices.
+            Production-grade web platforms, scalable microservices, and AI integrations built with modern architecture.
           </p>
         </div>
 
@@ -106,6 +105,8 @@ export default function Projects() {
                     src={flagshipProject.image} 
                     alt={flagshipProject.title} 
                     className="flagship-image"
+                    loading="lazy"
+                    decoding="async"
                     onError={(e) => {
                       e.target.onerror = null;
                       e.target.src = '/portfolio.png';
@@ -118,7 +119,7 @@ export default function Projects() {
               <div className="flagship-content-col">
                 <div className="flagship-badge-row">
                   <span className="badge-flagship-label">
-                    <Sparkles size={14} />
+                    <Sparkles size={13} />
                     <span>Flagship Project</span>
                   </span>
                   <span className="badge-flagship-competition">
@@ -126,7 +127,7 @@ export default function Projects() {
                   </span>
                   {flagshipProject.metrics && (
                     <span className="badge-flagship-metric">
-                      <TrendingUp size={14} />
+                      <TrendingUp size={13} />
                       <span>{flagshipProject.metrics}</span>
                     </span>
                   )}
@@ -145,7 +146,7 @@ export default function Projects() {
 
                 {/* Actions */}
                 <div className="flagship-actions">
-                  {flagshipProject.demoUrl && (
+                  {flagshipProject.demoUrl && flagshipProject.demoUrl !== '#' && (
                     <a 
                       href={flagshipProject.demoUrl} 
                       target="_blank" 
@@ -165,7 +166,7 @@ export default function Projects() {
                       className="btn btn-secondary"
                     >
                       <Github size={16} />
-                      <span>GitHub</span>
+                      <span>Source Code</span>
                     </a>
                   )}
 
@@ -173,7 +174,7 @@ export default function Projects() {
                     className="btn btn-outline"
                     onClick={() => setSelectedProject(flagshipProject)}
                   >
-                    <span>View Architecture</span>
+                    <span>Architecture & Decisions</span>
                     <ArrowUpRight size={16} />
                   </button>
                 </div>
@@ -202,7 +203,7 @@ export default function Projects() {
           {/* Search + Add Project button */}
           <div className="projects-actions-group">
             <div className="project-search-box">
-              <Search size={16} className="search-icon" />
+              <Search size={15} className="search-icon" />
               <input 
                 type="text" 
                 placeholder="Search by tech or keyword..."
@@ -220,7 +221,7 @@ export default function Projects() {
               className="btn btn-primary add-project-trigger-btn"
               onClick={() => setShowAddModal(true)}
             >
-              <Plus size={16} />
+              <Plus size={15} />
               <span>Add / Preview Project</span>
             </button>
           </div>
@@ -241,6 +242,7 @@ export default function Projects() {
           <div className="projects-grid">
             {filteredProjects.map((project) => {
               const isCustom = !initialProjectsData.some(init => init.id === project.id);
+              const hasValidDemo = project.demoUrl && project.demoUrl !== '#' && project.demoUrl !== project.githubUrl;
 
               return (
                 <div 
@@ -254,6 +256,8 @@ export default function Projects() {
                       src={project.image} 
                       alt={project.title} 
                       className="project-thumbnail"
+                      loading="lazy"
+                      decoding="async"
                       onError={(e) => {
                         e.target.onerror = null;
                         e.target.src = '/portfolio.png';
@@ -321,7 +325,7 @@ export default function Projects() {
 
                     {/* Footer Actions */}
                     <div className="project-card-footer" onClick={(e) => e.stopPropagation()}>
-                      {project.demoUrl && project.demoUrl !== '#' && (
+                      {hasValidDemo && (
                         <a 
                           href={project.demoUrl} 
                           target="_blank" 
@@ -329,7 +333,7 @@ export default function Projects() {
                           className="project-action-link"
                           title="Open Live Platform"
                         >
-                          <ExternalLink size={15} />
+                          <ExternalLink size={14} />
                           <span>Demo</span>
                         </a>
                       )}
@@ -342,7 +346,7 @@ export default function Projects() {
                           className="project-action-link"
                           title="View Source Code"
                         >
-                          <Github size={15} />
+                          <Github size={14} />
                           <span>Code</span>
                         </a>
                       )}
@@ -351,7 +355,7 @@ export default function Projects() {
                         className="project-details-btn"
                         onClick={() => setSelectedProject(project)}
                       >
-                        <span>Details</span>
+                        <span>Architecture</span>
                         <ArrowUpRight size={13} />
                       </button>
                     </div>

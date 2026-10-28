@@ -60,8 +60,10 @@ export default function About() {
             <div className="about-frame">
               <img 
                 src={personalInfo.aboutImage} 
-                alt="Kamaljeet Kaur working" 
+                alt="Kamaljeet Kaur - Computer Science Student & Full Stack Developer" 
                 className="about-image"
+                loading="lazy"
+                decoding="async"
               />
               <div className="about-badge-card">
                 <GraduationCap size={22} className="text-cyan" />
