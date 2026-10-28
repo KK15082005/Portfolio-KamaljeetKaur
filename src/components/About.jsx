@@ -6,7 +6,6 @@ import {
   GraduationCap, 
   Briefcase, 
   Mail, 
-  Sparkles, 
   Terminal, 
   HeartHandshake, 
   Rocket, 
@@ -17,23 +16,23 @@ export default function About() {
   const principles = [
     {
       icon: Terminal,
-      title: "Algorithmic Precision",
-      desc: "Deep conceptual mastery in Java DSA (100+ problems on LeetCode/GFG). Clean, time-optimized, edge-case resilient solutions."
+      title: "Algorithmic Problem Solving",
+      desc: "Disciplined Java DSA foundation with 100+ solved problems across LeetCode and GFG, prioritizing optimal time and space complexity."
+    },
+    {
+      icon: Code,
+      title: "Full-Stack Development",
+      desc: "Developing responsive React user interfaces, performant Node.js/Express APIs, and structured MongoDB database models."
     },
     {
       icon: Rocket,
-      title: "End-to-End Product Ownership",
-      desc: "Hands-on experience in founding teams—architecting REST APIs, database schemas, microservices, and React frontends from scratch."
+      title: "Production Ownership",
+      desc: "Shipping features in an active startup environment at VenueBook, resolving production bugs and improving query efficiency."
     },
     {
       icon: HeartHandshake,
-      title: "Mentorship & Community",
-      desc: "Guided 100+ juniors in DSA doubt resolution and mock reviews, plus leading 10+ peers in corporate placement relations."
-    },
-    {
-      icon: Sparkles,
-      title: "AI-First Engineering",
-      desc: "Integrating cutting-edge LLMs (Google Gemini API, Azure OpenAI) into real-world student workflows, evidenced by PrepPilot-AI."
+      title: "Technical Mentorship",
+      desc: "Guiding 100+ junior engineers through algorithmic concepts, code walkthroughs, and interview problem-solving approaches."
     }
   ];
 
@@ -44,31 +43,31 @@ export default function About() {
         <div className="section-header">
           <div className="section-chip">
             <User size={14} />
-            <span>Biography & Core Focus</span>
+            <span>About Me</span>
           </div>
           <h2 className="section-title">
-            Passionate About <span>Scalable Engineering</span> & Meaningful Impact
+            Engineering with <span>Purpose & Precision</span>
           </h2>
           <p className="section-desc">
-            Bridging algorithmic problem-solving with full-stack development to build products that solve real-world student and business challenges.
+            Bridging strong algorithmic foundations with modern full-stack development to build dependable, user-focused products.
           </p>
         </div>
 
         <div className="about-grid">
           
-          {/* Left Column: Image with Glass Frame */}
+          {/* Left Column: Image with Clean Modern Frame */}
           <div className="about-visual">
-            <div className="about-frame glass-card">
+            <div className="about-frame">
               <img 
                 src={personalInfo.aboutImage} 
                 alt="Kamaljeet Kaur working" 
                 className="about-image"
               />
-              <div className="about-badge-card glass-card">
-                <GraduationCap size={24} className="text-cyan" />
+              <div className="about-badge-card">
+                <GraduationCap size={22} className="text-cyan" />
                 <div>
                   <div className="about-badge-title">B.Tech CSE (2023–27)</div>
-                  <div className="about-badge-sub">Consistently Top 10 in Class</div>
+                  <div className="about-badge-sub">Computer Science & Engineering</div>
                 </div>
               </div>
             </div>
@@ -77,19 +76,15 @@ export default function About() {
           {/* Right Column: Bio Narrative & Principles */}
           <div className="about-content">
             <div className="bio-card glass-card">
-              <h3 className="bio-title">Hello! I'm Kamaljeet.</h3>
+              <h3 className="bio-title">Hello, I'm Kamaljeet Kaur</h3>
               <p className="bio-text">
-                I am a Computer Science Engineering undergraduate specializing in the <strong>MERN Stack</strong>, 
-                <strong>Java Data Structures & Algorithms</strong>, and <strong>AI-driven application development</strong>.
+                I'm a Computer Science Engineering student focused on building robust, responsive web applications and solving complex algorithmic challenges. My core strengths are in the <strong>MERN stack (React, Node.js, Express, MongoDB)</strong> and <strong>Data Structures & Algorithms in Java</strong>.
               </p>
               <p className="bio-text">
-                Currently, I contribute as a <strong>Full Stack Developer Intern</strong> within the founding engineering team at 
-                <strong> VenueBook</strong>, where I develop core booking workflows, write scalable microservices, and optimize MongoDB/SQL queries. 
-                Concurrently, as a <strong>Teaching Assistant</strong> at a stealth startup, I mentor over 100+ engineering students in Java DSA.
+                As a <strong>Full Stack Developer Intern</strong> at <strong>VenueBook</strong>, I contribute to the core booking platform, develop RESTful microservices, and optimize MongoDB data queries. Alongside development, I serve as a <strong>DSA Teaching Assistant</strong>, mentoring 100+ students in algorithmic problem-solving and clean code practices.
               </p>
               <p className="bio-text">
-                My flagship project, <strong>PrepPilot-AI</strong>, was presented as a <strong>Microsoft Imagine Cup '26</strong> entry, 
-                demonstrating my passion for turning complex AI APIs into intuitive, empowering tools.
+                I am driven by practical engineering, readable architectures, and continuous technical growth. I am actively preparing for <strong>Software Development Engineer (SDE)</strong> and <strong>Full Stack Developer</strong> opportunities at product-driven technology companies.
               </p>
 
               {/* Quick Info Grid */}
@@ -100,11 +95,11 @@ export default function About() {
                 </div>
                 <div className="info-item">
                   <Briefcase size={16} className="text-cyan" />
-                  <span>VenueBook Intern (Founding Team)</span>
+                  <span>Full Stack Intern @ VenueBook</span>
                 </div>
                 <div className="info-item">
                   <GraduationCap size={16} className="text-cyan" />
-                  <span>DITM, MDU Rohtak</span>
+                  <span>B.Tech CSE (2023–2027), DITM</span>
                 </div>
                 <div className="info-item">
                   <Mail size={16} className="text-cyan" />
@@ -118,9 +113,9 @@ export default function About() {
               {principles.map((p, idx) => {
                 const Icon = p.icon;
                 return (
-                  <div key={idx} className="principle-card glass-card">
+                  <div key={idx} className="principle-card">
                     <div className="principle-icon-box">
-                      <Icon size={20} className="text-indigo" />
+                      <Icon size={18} />
                     </div>
                     <div>
                       <h4 className="principle-title">{p.title}</h4>
