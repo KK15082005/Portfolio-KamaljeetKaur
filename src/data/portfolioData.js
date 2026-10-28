@@ -252,117 +252,113 @@ export const initialProjectsData = [
     id: "preppilot-ai",
     title: "PrepPilot-AI",
     category: "AI & Full-Stack",
-    tagline: "AI-Powered Personalized Mock-Interview & Mentorship Platform",
-    period: "July 2026",
+    tagline: "AI-Powered Technical Interview & Mentorship Platform",
+    period: "2024",
     featured: true,
     image: "/preppilot-ai.png",
     demoUrl: "https://deft-centaur-5d366c.netlify.app/",
     githubUrl: "https://github.com",
-    metrics: "35% Higher Task Completion",
-    description: "A comprehensive full-stack AI platform that autonomously designs and conducts personalized technical and HR interview rounds tailored to user target roles and skill gaps.",
+    metrics: "Microsoft Imagine Cup '26 Entry",
+    problem: "Engineering candidates and students often lack access to realistic, role-tailored technical interview simulations and structured, objective feedback before high-stakes hiring rounds.",
+    description: "An autonomous full-stack AI interview preparation platform that generates personalized technical, coding, and behavioral interview sessions based on the candidate's target job role and skill level.",
+    contribution: "Architected and implemented the end-to-end web application: designed secure JWT-authenticated REST APIs with Node.js/Express, built responsive React dashboard views with Axios, and integrated Google Gemini API for dynamic question generation and real-time response analysis.",
+    technicalDecisions: "Selected MongoDB for flexible storage of multi-format interview transcripts and dynamic evaluation criteria. Implemented modular service layers to decouple LLM prompt management from route handling, ensuring reliable API error handling and fast UI response.",
     highlights: [
-      "Built end-to-end full-stack platform using MongoDB, Express.js, React.js, Node.js, and Google Gemini API.",
-      "Implemented secure JWT authentication with bcrypt password hashing and protected REST API endpoints.",
-      "Engineered real-time voice and conversational interview flows, giving candidates realistic pressure-testing.",
-      "Designed dynamic React frontend with Axios integrations, error handling, and protected dashboard routing across 5+ views.",
-      "Presented as a Microsoft Imagine Cup project evaluated against innovation, feasibility, and student impact."
+      "Full-stack MERN architecture integrated with Google Gemini API for dynamic question generation.",
+      "Secure JWT authentication with bcrypt password encryption and protected API route middleware.",
+      "Interactive multi-step interview simulator supporting live response evaluation and scoring.",
+      "Responsive React dashboard providing detailed performance analytics and topic breakdown across 5+ views.",
+      "Evaluated as a Microsoft Imagine Cup project based on innovation, technical execution, and user impact."
     ],
-    tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Gemini API", "JWT", "Axios", "Azure App Services"]
+    tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Google Gemini API", "JWT", "Axios", "REST APIs"]
   },
   {
     id: "tradepulse",
     title: "TradePulse",
     category: "Full-Stack",
-    tagline: "Zerodha-Inspired Real-Time Stock Trading & Portfolio Platform",
-    period: "June 2026",
+    tagline: "Real-Time Stock Market Tracking & Portfolio Platform",
+    period: "2024",
     featured: true,
     image: "/project1.png",
     demoUrl: "https://github.com",
     githubUrl: "https://github.com",
-    metrics: "20+ Simulated Live Holdings",
-    description: "An interactive, high-performance financial web app providing real-time market data visualizers, customizable watchlists, and comprehensive portfolio tracking for simulated stock holdings.",
+    metrics: "Full-Stack Simulation",
+    problem: "Aspiring investors need a risk-free, responsive platform to track real-time market trends, test portfolio strategies, and observe virtual order executions without capital risk.",
+    description: "A financial analytics and portfolio tracking web application featuring interactive price charts, customizable watchlists, and virtual holdings calculation.",
+    contribution: "Developed the backend REST APIs using Node.js and Express for trade logging and watchlist management; built the interactive frontend trading dashboard with React and Chart.js.",
+    technicalDecisions: "Structured MongoDB schemas to segregate market tickers, user accounts, and virtual trade ledgers. Optimized database queries with indexed user IDs to maintain sub-100ms response times for portfolio updates.",
     highlights: [
-      "Developed robust backend REST APIs using Node.js and Express.js with JWT-based authorization and session controls.",
-      "Engineered responsive React.js trading dashboard with interactive charts, order placement simulation, and live P&L calculations.",
-      "Optimized MongoDB queries to retrieve transaction history and user watchlists with sub-100ms response times.",
-      "Implemented modular data models ensuring separation of market tickers, user accounts, and virtual trade ledgers."
+      "Responsive React trading dashboard with real-time Chart.js market visualizations.",
+      "RESTful API backend handling virtual order placement, holdings calculations, and watchlist syncing.",
+      "JWT-based session authentication with protected user transaction history.",
+      "Normalized MongoDB schemas designed for scalability and rapid data retrieval."
     ],
-    tech: ["React.js", "Node.js", "Express.js", "MongoDB", "REST APIs", "JWT", "Bootstrap", "Chart.js"]
+    tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Chart.js", "REST APIs", "JWT", "Bootstrap"]
   },
   {
     id: "portfolio-v1",
     title: "Personal Portfolio v1",
     category: "Frontend",
-    tagline: "Custom Responsive Portfolio with Google Apps Script Webhook",
+    tagline: "Responsive Developer Portfolio with Google Apps Script Integration",
     period: "2024",
     featured: false,
     image: "/portfolio.png",
     demoUrl: "https://jade-ganache-49939d.netlify.app/",
     githubUrl: "https://github.com",
-    metrics: "100% Cross-Device Responsive",
-    description: "The first iteration of my personal portfolio featuring smooth tabbed navigation, custom CSS layouts, and asynchronous contact form submission wired to Google Apps Script.",
+    metrics: "Live Production Site",
+    problem: "Showcasing technical projects and internship achievements in an accessible, mobile-first design with a functional recruiter inquiry channel without requiring a dedicated server.",
+    description: "A responsive portfolio website featuring tabbed navigation, smooth CSS animations, and asynchronous contact form submission wired to Google Apps Script.",
+    contribution: "Designed and built the full layout using HTML5, modern CSS3, and JavaScript, and connected the contact form to a Google Sheets webhook for automated lead collection.",
+    technicalDecisions: "Leveraged Google Apps Script as a serverless backend to process contact inquiries asynchronously without recurring cloud hosting costs.",
     highlights: [
-      "Created modern layout and interactive tabbed interface using Vanilla JavaScript, HTML5, and CSS3.",
-      "Wired dynamic contact form to automated Google Sheets webhook to capture recruiter inquiries without a dedicated backend server.",
-      "Engineered flexible CSS media queries and optimized layout shift."
+      "Custom responsive layout built from scratch with semantic HTML5 and modern CSS3.",
+      "Asynchronous contact form submission integrating with Google Sheets webhook API.",
+      "Mobile-friendly navigation with fluid typography and minimal layout shift."
     ],
     tech: ["HTML5", "CSS3", "JavaScript", "Google Apps Script", "Netlify"]
   },
   {
     id: "google-clone",
-    title: "Google Search UI Replicate",
+    title: "Google Search UI Replica",
     category: "Frontend",
-    tagline: "Pixel-Perfect Google Homepage & Search Layout Recreation",
+    tagline: "Pixel-Perfect Search Layout & Interaction Recreation",
     period: "2024",
     featured: false,
     image: "/project2.png",
     demoUrl: "https://loquacious-dodol-2147c3.netlify.app/",
     githubUrl: "https://github.com",
-    metrics: "Pixel-Perfect Alignment",
-    description: "A faithful recreation of Google's flagship search homepage, focusing on strict layout adherence, minimalist aesthetics, and responsive micro-interactions.",
+    metrics: "Pixel-Perfect Layout",
+    problem: "Achieving exact visual fidelity, cross-browser compatibility, and subtle micro-interaction replication of one of the world's most widely used web interfaces.",
+    description: "A precision recreation of Google's search homepage, focusing on strict layout adherence, minimalist aesthetics, and responsive micro-interactions.",
+    contribution: "Implemented the full user interface using clean HTML and CSS, focusing on exact search input focus states, header navigation menus, and localized footer sections.",
+    technicalDecisions: "Used pure CSS Flexbox and custom CSS variables to guarantee exact alignment across desktop, tablet, and mobile without relying on third-party frameworks.",
     highlights: [
-      "Implemented responsive search input with custom box-shadow focus states and interactive action buttons.",
-      "Accurately positioned header navigation icons, Google Apps tray mockups, and localized footer sections.",
-      "Built strictly adhering to CSS Flexbox standards."
+      "Pixel-accurate search bar with custom box-shadow focus animations and interactive action buttons.",
+      "Responsive header tray with modal-style menu triggers and localized footer layout.",
+      "Clean, modular CSS architecture using native Flexbox."
     ],
-    tech: ["HTML5", "CSS3", "Responsive UI", "Flexbox"]
+    tech: ["HTML5", "CSS3", "JavaScript", "Flexbox", "Responsive Design"]
   },
   {
     id: "digital-card",
-    title: "Interactive Digital Animated Experience",
+    title: "3D Animated Interactive Card",
     category: "Frontend",
-    tagline: "3D CSS Keyframe Animation & Interactive Card Experience",
+    tagline: "Hardware-Accelerated 3D CSS Keyframe Animation Experience",
     period: "2024",
     featured: false,
     image: "/project3.png",
     demoUrl: "https://wonderful-queijadas-cc82f3.netlify.app/",
     githubUrl: "https://github.com",
-    metrics: "Custom CSS Keyframes",
-    description: "An engaging, interactive web card built with pure CSS keyframes, 3D hover transforms, and creative micro-animations that respond to user mouse interactions.",
+    metrics: "60fps CSS 3D Transforms",
+    problem: "Delivering immersive 3D folding and unfolding card animations using pure CSS without the overhead of heavy third-party 3D canvas libraries.",
+    description: "An engaging interactive card web application built with multi-stage CSS keyframes, 3D hover transformations, and dynamic mouse interaction states.",
+    contribution: "Crafted complex multi-stage CSS animation timelines and integrated user interaction event listeners in JavaScript.",
+    technicalDecisions: "Used transform-style: preserve-3d and GPU-accelerated CSS properties (translate3d, rotate3d) to ensure fluid 60fps rendering across devices.",
     highlights: [
-      "Crafted multi-stage CSS keyframe animations for smooth folding and unfolding card states.",
-      "Employed transform-style: preserve-3d and perspective CSS rules for realistic depth.",
-      "Added dynamic greeting triggers and audio-visual feedback."
+      "Multi-stage 3D card folding and unfolding states driven by pure CSS keyframes.",
+      "Hardware-accelerated perspective calculations for realistic spatial depth.",
+      "Interactive audio-visual greeting triggers responsive to user cursor movement."
     ],
     tech: ["CSS3 Keyframes", "3D Transforms", "JavaScript", "Netlify"]
-  },
-  {
-    id: "nexturn-portal",
-    title: "Corporate Relations Placement Tracker",
-    category: "Leadership & Web",
-    tagline: "Student-Recruiter Outreach Management System Concept",
-    period: "2025",
-    featured: false,
-    image: "/project4.png",
-    demoUrl: "https://github.com",
-    githubUrl: "https://github.com",
-    metrics: "10+ Member Team Management",
-    description: "A centralized platform concept designed for the Nexturn Internship Cell to streamline recruiter communications, student resumes, and company drive schedules.",
-    highlights: [
-      "Organized industry outreach records and structured communication logs for corporate partners.",
-      "Facilitated transparent tracking of active student applications across hiring partners.",
-      "Formulated operational workflows adopted by the 10+ member placement cell team."
-    ],
-    tech: ["Product Workflow", "Corporate Operations", "Web UI Concept"]
   }
 ];

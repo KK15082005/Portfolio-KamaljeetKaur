@@ -5,8 +5,10 @@ import {
   Calendar, 
   Sparkles, 
   CheckCircle2, 
-  Layers, 
-  TrendingUp 
+  TrendingUp,
+  AlertCircle,
+  Cpu,
+  UserCheck
 } from 'lucide-react';
 import { Github } from './BrandIcons';
 
@@ -63,26 +65,59 @@ export default function ProjectModal({ project, onClose }) {
             </div>
             {project.period && (
               <div className="modal-period">
-                <Calendar size={14} />
+                <Calendar size={13} />
                 <span>{project.period}</span>
               </div>
             )}
           </div>
 
-          {/* Description */}
+          {/* Problem Statement */}
+          {project.problem && (
+            <div className="modal-section">
+              <h4 className="modal-section-title">
+                <AlertCircle size={15} className="text-cyan inline-icon" />
+                <span>The Problem</span>
+              </h4>
+              <p className="modal-desc">{project.problem}</p>
+            </div>
+          )}
+
+          {/* Solution / Overview */}
           <div className="modal-section">
-            <h4 className="modal-section-title">Overview</h4>
+            <h4 className="modal-section-title">Solution & Key Features</h4>
             <p className="modal-desc">{project.description}</p>
           </div>
 
-          {/* Key Highlights */}
+          {/* My Contribution */}
+          {project.contribution && (
+            <div className="modal-section">
+              <h4 className="modal-section-title">
+                <UserCheck size={15} className="text-cyan inline-icon" />
+                <span>My Contribution</span>
+              </h4>
+              <p className="modal-desc">{project.contribution}</p>
+            </div>
+          )}
+
+          {/* Technical Decisions */}
+          {project.technicalDecisions && (
+            <div className="modal-section">
+              <h4 className="modal-section-title">
+                <Cpu size={15} className="text-cyan inline-icon" />
+                <span>Technical Decisions & Architecture</span>
+              </h4>
+              <p className="modal-desc">{project.technicalDecisions}</p>
+            </div>
+          )}
+
+          {/* Key Engineering Highlights */}
           {project.highlights && project.highlights.length > 0 && (
             <div className="modal-section">
               <h4 className="modal-section-title">Key Engineering Highlights</h4>
               <ul className="modal-highlights-list">
                 {project.highlights.map((h, idx) => (
                   <li key={idx} className="modal-highlight-item">
-                    <CheckCircle2 size={16} className="text-cyan flex-shrink-0" />
+                    <CheckCircle2 size={15} className="text-cyan flex-shrink-0" />
                     <span>{h}</span>
                   </li>
                 ))}
@@ -93,7 +128,7 @@ export default function ProjectModal({ project, onClose }) {
           {/* Tech Stack */}
           {project.tech && project.tech.length > 0 && (
             <div className="modal-section">
-              <h4 className="modal-section-title">Tech Stack & Integrations</h4>
+              <h4 className="modal-section-title">Tech Stack & Tools</h4>
               <div className="modal-tech-chips">
                 {project.tech.map((t, idx) => (
                   <span key={idx} className="tech-chip">{t}</span>
@@ -104,14 +139,14 @@ export default function ProjectModal({ project, onClose }) {
 
           {/* Action Links */}
           <div className="modal-actions">
-            {project.demoUrl && project.demoUrl !== '#' && (
+            {project.demoUrl && project.demoUrl !== '#' && project.demoUrl !== 'https://github.com' && (
               <a 
                 href={project.demoUrl} 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="btn btn-primary"
               >
-                <span>Live Deployment</span>
+                <span>Live Demo</span>
                 <ExternalLink size={16} />
               </a>
             )}
