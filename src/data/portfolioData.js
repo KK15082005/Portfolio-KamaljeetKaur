@@ -401,5 +401,19 @@ export const initialProjectsData = [
       "Interactive audio-visual greeting triggers responsive to user cursor movement."
     ],
     tech: ["CSS3 Keyframes", "3D Transforms", "JavaScript", "Netlify"]
-  }
+  },
+  {
+    id: "kanban-board",
+    title: "Kanban Board",
+    category: "Full-Stack",
+    tagline: "Built a responsive Kanban board with drag-and-drop functionality to move tasks between columns and manage workflows efficiently.",
+    period: "Aug 2026",
+    featured: true,
+    image: "/KB.png",
+    demoUrl: "https://fancy-tiramisu-85ef54.netlify.app/",
+    githubUrl: "https://github.com/KK15082005/KanabanBoard",
+    metrics: "",
+    description: "Developed a responsive Kanban board with drag-and-drop functionality to move tasks between columns. Built an intuitive interface for task organization, status tracking, and efficient workflow management.",
+    tech: ["React.js", "JavaScript", "HTML5", "CSS3"]
+  },
 ];

@@ -53,9 +53,10 @@ export default function About() {
           </p>
         </div>
 
+        {/* TOP ROW: Balanced Two-Column Intro (Photo & Bio) */}
         <div className="about-grid">
           
-          {/* Left Column: Image with Clean Modern Frame */}
+          {/* Left Column: Image & Highlights */}
           <div className="about-visual">
             <div className="about-frame">
               <img 
@@ -73,9 +74,21 @@ export default function About() {
                 </div>
               </div>
             </div>
+
+            {/* Quick credentials strip under photo */}
+            <div className="about-visual-highlights">
+              <div className="visual-highlight-chip">
+                <span className="highlight-dot"></span>
+                <span>Full Stack Intern @ VenueBook</span>
+              </div>
+              <div className="visual-highlight-chip">
+                <span className="highlight-dot"></span>
+                <span>DSA Teaching Assistant (Java)</span>
+              </div>
+            </div>
           </div>
 
-          {/* Right Column: Bio Narrative & Principles */}
+          {/* Right Column: Bio Narrative & Quick Info */}
           <div className="about-content">
             <div className="bio-card glass-card">
               <h3 className="bio-title">Hello, I'm Kamaljeet Kaur</h3>
@@ -109,27 +122,32 @@ export default function About() {
                 </div>
               </div>
             </div>
-
-            {/* Principles Cards */}
-            <div className="principles-grid">
-              {principles.map((p, idx) => {
-                const Icon = p.icon;
-                return (
-                  <div key={idx} className="principle-card">
-                    <div className="principle-icon-box">
-                      <Icon size={18} />
-                    </div>
-                    <div>
-                      <h4 className="principle-title">{p.title}</h4>
-                      <p className="principle-desc">{p.desc}</p>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-
           </div>
 
+        </div>
+
+        {/* BOTTOM ROW: Full-Width 4-Pillar Grid */}
+        <div className="about-principles-section">
+          <div className="principles-section-header">
+            <span className="principles-tag">CORE ENGINEERING PILLARS</span>
+          </div>
+
+          <div className="principles-grid">
+            {principles.map((p, idx) => {
+              const Icon = p.icon;
+              return (
+                <div key={idx} className="principle-card glass-card">
+                  <div className="principle-icon-box">
+                    <Icon size={18} />
+                  </div>
+                  <div className="principle-content">
+                    <h4 className="principle-title">{p.title}</h4>
+                    <p className="principle-desc">{p.desc}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
 
       </div>
