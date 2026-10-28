@@ -3,13 +3,9 @@ import { personalInfo } from '../data/portfolioData';
 import { 
   ArrowRight, 
   FileDown, 
-  Sparkles, 
-  Terminal, 
-  Cpu, 
-  Layers, 
-  Award, 
   CheckCircle2,
-  Code2
+  Terminal,
+  Layers
 } from 'lucide-react';
 import { Github, Linkedin, Instagram } from './BrandIcons';
 
@@ -18,51 +14,49 @@ export default function Hero() {
     <section id="home" className="hero-section">
       <div className="container hero-container">
         
-        {/* Left Column: Content */}
+        {/* Left Column: 55% Content */}
         <div className="hero-content">
           
-          {/* Top Pill */}
+          {/* Eyebrow Label */}
           <div className="hero-badge">
             <span className="hero-badge-dot"></span>
-            <span className="hero-badge-text">Full Stack Developer & SDE Candidate</span>
-            <span className="hero-badge-tag">MERN + Java</span>
+            <span className="hero-badge-text">Available for SDE & Full Stack Roles</span>
           </div>
 
-          {/* Heading */}
+          {/* Exact Headline: ~3 Lines on Desktop */}
           <h1 className="hero-title">
-            Hi, I'm <span className="text-gradient">{personalInfo.name}</span>
-            <br />
-            Architecting Scalable Full-Stack & AI Systems.
+            Hi, I'm <span className="name-gradient">{personalInfo.name}</span>,<br />
+            Full Stack Developer &<br />
+            Aspiring Software Engineer.
           </h1>
 
-          {/* Subtitle */}
+          {/* Supporting Copy (2-3 lines on desktop) */}
           <p className="hero-subtitle">
-            Founding Engineering Team Intern at <strong className="text-highlight">VenueBook</strong> • 
-            Java DSA Teaching Assistant • Microsoft Imagine Cup '26 Participant. 
-            Transforming product ideation into high-performance full-stack architectures.
+            I build responsive full-stack applications with React, Node.js, and MongoDB, 
+            backed by hands-on engineering internship experience and disciplined algorithmic problem solving in Java.
           </p>
 
-          {/* Key Quick Highlights */}
+          {/* Skills Bullets */}
           <div className="hero-bullets">
             <div className="hero-bullet">
-              <CheckCircle2 size={16} className="text-cyan" />
-              <span>Full-Stack MERN & Microservices</span>
+              <CheckCircle2 size={16} className="bullet-icon" />
+              <span>Full-Stack Development with React, Node.js & MongoDB</span>
             </div>
             <div className="hero-bullet">
-              <CheckCircle2 size={16} className="text-cyan" />
-              <span>100+ DSA Problems Solved in Java</span>
+              <CheckCircle2 size={16} className="bullet-icon" />
+              <span>Algorithmic Problem Solving in Java (DSA)</span>
             </div>
             <div className="hero-bullet">
-              <CheckCircle2 size={16} className="text-cyan" />
-              <span>AI Integration (Gemini API & Azure)</span>
+              <CheckCircle2 size={16} className="bullet-icon" />
+              <span>RESTful API Development & Microservices Architecture</span>
             </div>
           </div>
 
-          {/* CTAs */}
+          {/* Calls to Action */}
           <div className="hero-actions">
             <a href="#projects" className="btn btn-primary">
-              <span>View Featured Projects</span>
-              <ArrowRight size={18} />
+              <span>View Projects</span>
+              <ArrowRight size={16} />
             </a>
             
             <a 
@@ -72,16 +66,16 @@ export default function Hero() {
               target="_blank" 
               rel="noopener noreferrer"
             >
-              <FileDown size={18} />
+              <FileDown size={16} />
               <span>Download Resume</span>
             </a>
 
             <a href="#contact" className="btn btn-outline">
-              <span>Let's Talk</span>
+              <span>Contact Me</span>
             </a>
           </div>
 
-          {/* Socials */}
+          {/* Social Links Neatly Below CTAs */}
           <div className="hero-socials">
             <span className="socials-label">Connect:</span>
             <a 
@@ -89,72 +83,67 @@ export default function Hero() {
               target="_blank" 
               rel="noopener noreferrer" 
               className="social-icon"
-              aria-label="LinkedIn"
+              aria-label="LinkedIn Profile"
+              title="LinkedIn"
             >
-              <Linkedin size={20} />
+              <Linkedin size={18} />
             </a>
             <a 
               href={personalInfo.socials.github} 
               target="_blank" 
               rel="noopener noreferrer" 
               className="social-icon"
-              aria-label="GitHub"
+              aria-label="GitHub Profile"
+              title="GitHub"
             >
-              <Github size={20} />
+              <Github size={18} />
             </a>
             <a 
               href={personalInfo.socials.instagram} 
               target="_blank" 
               rel="noopener noreferrer" 
               className="social-icon"
-              aria-label="Instagram"
+              aria-label="Instagram Profile"
+              title="Instagram"
             >
-              <Instagram size={20} />
+              <Instagram size={18} />
             </a>
           </div>
 
         </div>
 
-        {/* Right Column: Profile & Floating Tech Badges */}
+        {/* Right Column: 45% Portrait with Restrained Styling */}
         <div className="hero-visual">
-          <div className="profile-card-wrapper">
+          <div className="portrait-container">
             
-            {/* Glowing Ring Background */}
-            <div className="profile-glow-ring"></div>
-
-            {/* Profile Image Container */}
-            <div className="profile-image-frame">
+            {/* Elegant Shaped Image Frame */}
+            <div className="portrait-frame">
               <img 
                 src={personalInfo.profileImage} 
                 alt={personalInfo.name} 
-                className="profile-img"
+                className="portrait-img"
               />
-              <div className="profile-overlay-gradient"></div>
+              <div className="portrait-gradient-overlay"></div>
 
-              {/* Status Floating Chip */}
-              <div className="profile-status-card">
-                <div className="status-avatar-dot"></div>
-                <div>
-                  <div className="status-title">Current Role</div>
-                  <div className="status-desc">Full Stack Intern @ VenueBook</div>
+              {/* Floating Role Card on Profile Picture */}
+              <div className="portrait-floating-card">
+                <span className="floating-dot"></span>
+                <div className="floating-card-body">
+                  <span className="floating-card-tag">CURRENT ROLE</span>
+                  <span className="floating-card-text">Full Stack Intern @ VenueBook</span>
                 </div>
               </div>
             </div>
 
-            {/* Floating Tech Badges */}
-            <div className="floating-badge badge-top-left">
-              <Terminal size={18} className="text-cyan" />
-              <span>Java DSA Specialist</span>
-            </div>
-
-            <div className="floating-badge badge-bottom-right">
-              <Cpu size={18} className="text-indigo" />
-              <span>PrepPilot-AI Creator</span>
-            </div>
-
-            <div className="floating-badge badge-top-right">
-              <Layers size={18} className="text-emerald" />
+            {/* Exactly Two Compact Badges (Positioned cleanly without covering face) */}
+            <div className="portrait-badge badge-top-right">
+              <Layers size={14} className="text-cyan" />
               <span>MERN Stack</span>
+            </div>
+
+            <div className="portrait-badge badge-bottom-left">
+              <Terminal size={14} className="text-cyan" />
+              <span>Java DSA</span>
             </div>
 
           </div>
@@ -162,12 +151,12 @@ export default function Hero() {
 
       </div>
 
-      {/* Stats Counter Ribbon */}
+      {/* Clean Statistics Section Below Hero */}
       <div className="container hero-stats-container">
         <div className="stats-grid">
           {personalInfo.stats.map((stat, idx) => (
-            <div key={idx} className="stat-card glass-card">
-              <div className="stat-number text-gradient">{stat.value}</div>
+            <div key={idx} className="stat-card">
+              <div className="stat-number">{stat.value}</div>
               <div className="stat-label">{stat.label}</div>
               <div className="stat-sub">{stat.sub}</div>
             </div>

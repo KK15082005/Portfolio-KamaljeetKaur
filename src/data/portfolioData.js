@@ -8,8 +8,8 @@
 
 export const personalInfo = {
   name: "Kamaljeet Kaur",
-  headline: "Full Stack Developer & SDE Candidate",
-  tagline: "Building scalable full-stack web applications, architecting intelligent AI systems, and solving complex algorithmic challenges.",
+  headline: "Full Stack Developer & Aspiring Software Engineer",
+  tagline: "Building responsive full-stack applications with React, Node.js, and MongoDB, backed by hands-on engineering internship experience and strong algorithmic problem solving in Java.",
   location: "New Delhi, India",
   email: "kaur.kamaljeet1505@gmail.com",
   phone: "+91 9811529947",
