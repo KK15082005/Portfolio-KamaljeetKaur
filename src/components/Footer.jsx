@@ -38,6 +38,7 @@ export default function Footer() {
           </div>
 
           <button 
+            type="button"
             className="scroll-top-btn" 
             onClick={scrollToTop}
             aria-label="Scroll to top"

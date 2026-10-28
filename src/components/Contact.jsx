@@ -112,7 +112,7 @@ export default function Contact() {
                   <div className="channel-icon-circle">
                     <Mail size={18} className="text-cyan" />
                   </div>
-                  <div>
+                  <div className="channel-content">
                     <div className="channel-label">Email</div>
                     <div className="channel-value">{personalInfo.email}</div>
                   </div>
@@ -122,7 +122,7 @@ export default function Contact() {
                   <div className="channel-icon-circle">
                     <Phone size={18} className="text-cyan" />
                   </div>
-                  <div>
+                  <div className="channel-content">
                     <div className="channel-label">Phone / WhatsApp</div>
                     <div className="channel-value">{personalInfo.phone}</div>
                   </div>
@@ -132,7 +132,7 @@ export default function Contact() {
                   <div className="channel-icon-circle">
                     <MapPin size={18} className="text-cyan" />
                   </div>
-                  <div>
+                  <div className="channel-content">
                     <div className="channel-label">Location</div>
                     <div className="channel-value">{personalInfo.location}</div>
                   </div>
