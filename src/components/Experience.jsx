@@ -7,9 +7,7 @@ import {
   Calendar, 
   CheckCircle2, 
   Sparkles, 
-  Building2, 
-  Code,
-  ArrowUpRight
+  Building2 
 } from 'lucide-react';
 
 export default function Experience() {
@@ -22,13 +20,13 @@ export default function Experience() {
         <div className="section-header">
           <div className="section-chip">
             <Briefcase size={14} />
-            <span>Career Milestones</span>
+            <span>Work & Background</span>
           </div>
           <h2 className="section-title">
-            Internships, Experience & <span>Achievements</span>
+            Internships & <span>Experience</span>
           </h2>
           <p className="section-desc">
-            Proven track record in engineering execution, startup growth, technical teaching, and collegiate leadership.
+            Hands-on software development internships, academic mentorship, and continuous technical growth.
           </p>
 
           {/* Tab Selector */}
@@ -37,7 +35,7 @@ export default function Experience() {
               className={`tab-pill-btn ${activeTab === 'experience' ? 'active' : ''}`}
               onClick={() => setActiveTab('experience')}
             >
-              <Briefcase size={16} />
+              <Briefcase size={15} />
               <span className="tab-label-desktop">Work & Internships ({experiencesData.length})</span>
               <span className="tab-label-mobile">Experience ({experiencesData.length})</span>
             </button>
@@ -45,14 +43,14 @@ export default function Experience() {
               className={`tab-pill-btn ${activeTab === 'education' ? 'active' : ''}`}
               onClick={() => setActiveTab('education')}
             >
-              <GraduationCap size={16} />
+              <GraduationCap size={15} />
               <span>Education ({educationData.length})</span>
             </button>
             <button 
               className={`tab-pill-btn ${activeTab === 'achievements' ? 'active' : ''}`}
               onClick={() => setActiveTab('achievements')}
             >
-              <Award size={16} />
+              <Award size={15} />
               <span className="tab-label-desktop">Achievements ({achievementsData.length})</span>
               <span className="tab-label-mobile">Awards ({achievementsData.length})</span>
             </button>
@@ -79,15 +77,15 @@ export default function Experience() {
                     <div>
                       <div className="timeline-role-row">
                         <h3 className="timeline-role">{exp.role}</h3>
-                        <span className="timeline-badge" style={{ backgroundColor: `${exp.color}20`, color: exp.color, borderColor: `${exp.color}50` }}>
+                        <span className="timeline-badge" style={{ backgroundColor: `${exp.color}18`, color: exp.color, borderColor: `${exp.color}40` }}>
                           {exp.badge}
                         </span>
                       </div>
                       <div className="timeline-company-row">
-                        <Building2 size={16} className="text-cyan" />
+                        <Building2 size={15} className="text-cyan" />
                         <span className="timeline-company">{exp.company}</span>
                         <span className="timeline-divider">•</span>
-                        <Calendar size={14} className="text-muted" />
+                        <Calendar size={13} className="text-muted" />
                         <span className="timeline-period">{exp.period}</span>
                       </div>
                     </div>
@@ -97,7 +95,7 @@ export default function Experience() {
                   <ul className="timeline-highlights">
                     {exp.highlights.map((item, idx) => (
                       <li key={idx} className="timeline-highlight-item">
-                        <CheckCircle2 size={16} className="highlight-icon text-cyan" />
+                        <CheckCircle2 size={15} className="highlight-icon text-cyan" />
                         <span>{item}</span>
                       </li>
                     ))}
@@ -122,18 +120,18 @@ export default function Experience() {
             {educationData.map((edu, idx) => (
               <div key={idx} className="edu-card glass-card">
                 <div className="edu-icon-circle">
-                  <GraduationCap size={24} className="text-cyan" />
+                  <GraduationCap size={22} className="text-cyan" />
                 </div>
                 <div className="edu-content">
                   <div className="edu-period">
-                    <Calendar size={14} />
+                    <Calendar size={13} />
                     <span>{edu.period}</span>
                   </div>
                   <h3 className="edu-degree">{edu.degree}</h3>
                   <div className="edu-institution">{edu.institution}</div>
                   
                   <div className="edu-score-pill">
-                    <Sparkles size={14} className="text-amber" />
+                    <Sparkles size={13} className="text-amber" />
                     <span>{edu.score}</span>
                   </div>
 
@@ -154,7 +152,7 @@ export default function Experience() {
             {achievementsData.map((ach, idx) => (
               <div key={idx} className="achievement-card glass-card">
                 <div className="achievement-icon-box">
-                  <Award size={26} className="text-indigo" />
+                  <Award size={22} className="text-cyan" />
                 </div>
                 <div className="achievement-body">
                   <div className="achievement-org">{ach.organization}</div>
