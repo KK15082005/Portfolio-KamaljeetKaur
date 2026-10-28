@@ -7,7 +7,8 @@ import {
   Calendar, 
   CheckCircle2, 
   Sparkles, 
-  Building2 
+  Building2,
+  ExternalLink 
 } from 'lucide-react';
 
 export default function Experience() {
@@ -26,12 +27,13 @@ export default function Experience() {
             Internships & <span>Experience</span>
           </h2>
           <p className="section-desc">
-            Hands-on software development internships, academic mentorship, and continuous technical growth.
+            Hands-on software development internships, academic mentorship, and verifiable technical achievements.
           </p>
 
           {/* Tab Selector */}
           <div className="tab-pill-switcher">
             <button 
+              type="button"
               className={`tab-pill-btn ${activeTab === 'experience' ? 'active' : ''}`}
               onClick={() => setActiveTab('experience')}
             >
@@ -40,6 +42,7 @@ export default function Experience() {
               <span className="tab-label-mobile">Experience ({experiencesData.length})</span>
             </button>
             <button 
+              type="button"
               className={`tab-pill-btn ${activeTab === 'education' ? 'active' : ''}`}
               onClick={() => setActiveTab('education')}
             >
@@ -47,6 +50,7 @@ export default function Experience() {
               <span>Education ({educationData.length})</span>
             </button>
             <button 
+              type="button"
               className={`tab-pill-btn ${activeTab === 'achievements' ? 'active' : ''}`}
               onClick={() => setActiveTab('achievements')}
             >
@@ -155,9 +159,29 @@ export default function Experience() {
                   <Award size={22} className="text-cyan" />
                 </div>
                 <div className="achievement-body">
-                  <div className="achievement-org">{ach.organization}</div>
+                  <div className="achievement-header-row">
+                    <div className="achievement-org">{ach.organization}</div>
+                    {ach.badge && (
+                      <span className="achievement-badge">{ach.badge}</span>
+                    )}
+                  </div>
                   <h3 className="achievement-title">{ach.title}</h3>
                   <p className="achievement-desc">{ach.description}</p>
+
+                  {ach.link && (
+                    <div className="achievement-link-wrapper">
+                      <a 
+                        href={ach.link} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="achievement-link-btn"
+                        aria-label={`View evidence for ${ach.title}`}
+                      >
+                        <span>{ach.linkText || 'Verify Evidence'}</span>
+                        <ExternalLink size={13} />
+                      </a>
+                    </div>
+                  )}
                 </div>
               </div>
             ))}

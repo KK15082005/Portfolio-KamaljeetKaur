@@ -120,8 +120,9 @@ export default function Hero() {
             <div className="portrait-frame">
               <img 
                 src={personalInfo.profileImage} 
-                alt={personalInfo.name} 
+                alt={`${personalInfo.name} - Full Stack Developer & Aspiring Software Engineer`} 
                 className="portrait-img"
+                fetchPriority="high"
               />
               <div className="portrait-gradient-overlay"></div>
 

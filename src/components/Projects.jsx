@@ -105,6 +105,8 @@ export default function Projects() {
                     src={flagshipProject.image} 
                     alt={flagshipProject.title} 
                     className="flagship-image"
+                    loading="lazy"
+                    decoding="async"
                     onError={(e) => {
                       e.target.onerror = null;
                       e.target.src = '/portfolio.png';
@@ -254,6 +256,8 @@ export default function Projects() {
                       src={project.image} 
                       alt={project.title} 
                       className="project-thumbnail"
+                      loading="lazy"
+                      decoding="async"
                       onError={(e) => {
                         e.target.onerror = null;
                         e.target.src = '/portfolio.png';

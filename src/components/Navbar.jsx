@@ -116,9 +116,10 @@ export default function Navbar() {
 
           {/* Mobile Menu Toggle */}
           <button
+            type="button"
             className="mobile-toggle"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle menu"
+            aria-label="Toggle navigation menu"
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -130,7 +131,7 @@ export default function Navbar() {
         <div className="mobile-drawer">
           <div className="mobile-drawer-header">
             <span className="drawer-title">Navigation</span>
-            <button className="drawer-close" onClick={() => setMobileMenuOpen(false)}>
+            <button type="button" className="drawer-close" onClick={() => setMobileMenuOpen(false)} aria-label="Close menu">
               <X size={20} />
             </button>
           </div>

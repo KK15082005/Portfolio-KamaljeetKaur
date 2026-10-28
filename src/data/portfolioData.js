@@ -35,47 +35,76 @@ export const personalInfo = {
 
 export const skillsData = {
   "Languages": [
-    { name: "Java", level: "Intermediate", icon: "Coffee" },
-    { name: "JavaScript (ES6+)", level: "Advanced", icon: "Code2" },
-    { name: "Python", level: "Intermediate", icon: "Terminal" },
-    { name: "C++", level: "Basic", icon: "Cpu" },
-    { name: "SQL", level: "Intermediate", icon: "Database" }
+    { name: "Java", focus: "OOP & Data Structures", icon: "Coffee" },
+    { name: "JavaScript (ES6+)", focus: "Modern Web & Async", icon: "Code2" },
+    { name: "Python", focus: "Scripting & Automation", icon: "Terminal" },
+    { name: "C++", focus: "Problem Solving & Systems", icon: "Cpu" },
+    { name: "SQL", focus: "Relational Queries", icon: "Database" }
   ],
   "Frontend": [
-    { name: "React.js", level: "Advanced", icon: "Atom" },
-    { name: "Next.js", level: "Intermediate", icon: "Globe" },
-    { name: "HTML5 & Semantic UI", level: "Expert", icon: "Layout" },
-    { name: "CSS3 & Glassmorphism", level: "Expert", icon: "Palette" },
-    { name: "Tailwind CSS", level: "Intermediate", icon: "Sparkles" },
-    { name: "Bootstrap", level: "Intermediate", icon: "Layers" }
+    { name: "React.js", focus: "Hooks & Component Architecture", icon: "Atom" },
+    { name: "Next.js", focus: "SSR & Static Generation", icon: "Globe" },
+    { name: "HTML5", focus: "Semantic Structure & Accessibility", icon: "Layout" },
+    { name: "CSS3", focus: "Responsive Design & Glassmorphism", icon: "Palette" },
+    { name: "Tailwind CSS", focus: "Utility-First Responsive Styling", icon: "Sparkles" },
+    { name: "Bootstrap", focus: "Component Layout Systems", icon: "Layers" }
   ],
-  "Backend & Architecture": [
-    { name: "Node.js", level: "Intermediate", icon: "Server" },
-    { name: "Express.js", level: "Intermediate", icon: "Network" },
-    { name: "REST APIs & Microservices", level: "Intermediate", icon: "Share2" },
-    { name: "JWT & Bcrypt Security", level: "Intermediate", icon: "ShieldCheck" },
-    { name: "API Development", level: "Intermediate", icon: "Cpu" }
+  "Backend": [
+    { name: "Node.js", focus: "Asynchronous Event-Driven Runtime", icon: "Server" },
+    { name: "Express.js", focus: "RESTful API Design & Middleware", icon: "Network" },
+    { name: "REST APIs", focus: "Client-Server Architecture", icon: "Share2" },
+    { name: "Microservices", focus: "Modular Service Decomposition", icon: "Cpu" },
+    { name: "JWT & Security", focus: "Authentication & Protected Routes", icon: "ShieldCheck" }
   ],
   "Databases": [
-    { name: "MongoDB", level: "Intermediate", icon: "Database" },
-    { name: "Mongoose ODM", level: "Intermediate", icon: "Boxes" },
-    { name: "MySQL / SQL", level: "Intermediate", icon: "HardDrive" }
+    { name: "MongoDB", focus: "NoSQL Document Modeling", icon: "Database" },
+    { name: "Mongoose ODM", focus: "Schema Design & Validation", icon: "Boxes" },
+    { name: "MySQL / Relational SQL", focus: "Relational Schema & Indexing", icon: "HardDrive" }
   ],
-  "AI & Cloud Tools": [
-    { name: "Gemini API", level: "Intermediate", icon: "Bot" },
-    { name: "Azure OpenAI", level: "Intermediate", icon: "Cloud" },
-    { name: "Azure App Services", level: "Intermediate", icon: "CloudLightning" },
-    { name: "Git & GitHub", level: "Advanced", icon: "GitBranch" },
-    { name: "Netlify & Vercel", level: "Advanced", icon: "Zap" },
-    { name: "VS Code", level: "Advanced", icon: "FileCode" }
-  ],
-  "CS Fundamentals": [
-    { name: "Data Structures & Algorithms", level: "DSA Specialist", icon: "Binary" },
-    { name: "Object-Oriented Programming (OOP)", level: "Core Strength", icon: "Box" },
-    { name: "Database Management Systems (DBMS)", level: "Proficient", icon: "Database" },
-    { name: "Computer Networks", level: "Proficient", icon: "Wifi" }
+  "Tools": [
+    { name: "Git & GitHub", focus: "Version Control & Code Review", icon: "GitBranch" },
+    { name: "Postman", focus: "API Testing & Endpoint Debugging", icon: "Send" },
+    { name: "VS Code", focus: "IDE & Tooling Ecosystem", icon: "FileCode" },
+    { name: "Google Gemini API", focus: "LLM Integration & Prompting", icon: "Bot" },
+    { name: "Azure OpenAI & Cloud", focus: "AI Services & App Deployment", icon: "Cloud" },
+    { name: "Netlify", focus: "Frontend Hosting & CI/CD", icon: "Zap" }
   ]
 };
+
+export const codingProfiles = [
+  {
+    platform: "LeetCode",
+    name: "LeetCode Profile",
+    url: "https://leetcode.com",
+    metric: "100+ Problems Solved",
+    badge: "DSA & Algorithms",
+    icon: "Code"
+  },
+  {
+    platform: "GeeksforGeeks",
+    name: "GeeksforGeeks",
+    url: "https://www.geeksforgeeks.org",
+    metric: "Practice & Contests",
+    badge: "Problem Solving",
+    icon: "Terminal"
+  },
+  {
+    platform: "Code360",
+    name: "Code360 (Coding Ninjas)",
+    url: "https://www.naukri.com/code360",
+    metric: "Curated DSA Paths",
+    badge: "Guided Practice",
+    icon: "Cpu"
+  },
+  {
+    platform: "GitHub",
+    name: "GitHub Codebases",
+    url: "https://github.com",
+    metric: "Full-Stack Repositories",
+    badge: "Version Control",
+    icon: "GitBranch"
+  }
+];
 
 export const experiencesData = [
   {
@@ -190,26 +219,38 @@ export const achievementsData = [
   {
     title: "100+ DSA Problems Solved",
     organization: "LeetCode, GeeksforGeeks & Code360",
-    description: "Consistent problem solver across core topics: Arrays, LinkedLists, Stacks, Queues, Trees, Recursion, and Dynamic Programming.",
-    icon: "Code"
+    badge: "DSA Mastery",
+    description: "Consistent problem solver in Java across core algorithmic topics: Arrays, Strings, LinkedLists, Stacks, Queues, Trees, Recursion, and Dynamic Programming.",
+    icon: "Code",
+    link: "https://leetcode.com",
+    linkText: "Coding Profiles"
   },
   {
     title: "Microsoft Imagine Cup '26 Participant",
     organization: "Microsoft Global Innovation Contest",
-    description: "Evaluated on innovation, technical scalability, feasibility, and real-world student impact with flagship AI mentorship project PrepPilot-AI.",
-    icon: "Award"
+    badge: "Global Innovation",
+    description: "Evaluated on technical innovation, cloud scalability, feasibility, and real-world student impact with flagship AI mentorship project PrepPilot-AI.",
+    icon: "Award",
+    link: "https://deft-centaur-5d366c.netlify.app/",
+    linkText: "View Imagine Cup Project"
   },
   {
     title: "HackerRank Orchestrate Participant",
     organization: "HackerRank Global",
-    description: "Competed in high-intensity competitive programming and algorithmic problem-solving sprints.",
-    icon: "Terminal"
+    badge: "Competitive Coding",
+    description: "Competed in high-intensity competitive programming, algorithmic puzzles, and timed technical problem-solving sprints.",
+    icon: "Terminal",
+    link: "https://www.hackerrank.com",
+    linkText: "HackerRank Platform"
   },
   {
     title: "Google 'Fund My Crazy' Challenge",
     organization: "Google Student Community",
-    description: "Selected participant for high-creativity student innovation pitch focusing on AI-empowered education.",
-    icon: "Sparkles"
+    badge: "Innovation Pitch",
+    description: "Selected participant for high-creativity student innovation pitch focusing on AI-empowered education and intelligent mentorship tools.",
+    icon: "Sparkles",
+    link: "https://developers.google.com/community",
+    linkText: "Google Community"
   }
 ];
 
