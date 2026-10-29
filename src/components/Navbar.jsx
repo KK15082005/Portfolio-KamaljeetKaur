@@ -93,7 +93,7 @@ export default function Navbar() {
         {/* Brand Logo */}
         <a href="#home" className="nav-brand">
           <div className="brand-symbol">
-            <span>KK</span>
+            <img src="/logo.png" alt="Kamaljeet Kaur Logo" className="brand-logo-img" />
           </div>
           <div className="brand-text">
             <span className="brand-name">{personalInfo.name}</span>

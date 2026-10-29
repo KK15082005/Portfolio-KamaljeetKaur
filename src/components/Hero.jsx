@@ -21,7 +21,7 @@ export default function Hero() {
 
           {/* Exact Headline */}
           <h1 className="hero-title">
-            I build web products that solve <span className="name-gradient">real problems.</span>
+            I build web products that solve <span className="hero-highlight">real problems.</span>
           </h1>
 
           {/* Exact Supporting Paragraph */}
