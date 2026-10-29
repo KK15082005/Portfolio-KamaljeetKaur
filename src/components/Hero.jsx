@@ -2,10 +2,7 @@ import React from 'react';
 import { personalInfo } from '../data/portfolioData';
 import { 
   ArrowRight, 
-  FileDown, 
-  CheckCircle2,
-  Terminal,
-  Layers
+  FileDown
 } from 'lucide-react';
 import { Github, Linkedin, Instagram } from './BrandIcons';
 
@@ -14,48 +11,28 @@ export default function Hero() {
     <section id="home" className="hero-section">
       <div className="container hero-container">
         
-        {/* Left Column: 55% Content */}
+        {/* Left Column: Content */}
         <div className="hero-content">
           
           {/* Eyebrow Label */}
           <div className="hero-badge">
-            <span className="hero-badge-dot"></span>
-            <span className="hero-badge-text">Available for SDE & Full Stack Roles</span>
+            <span className="hero-badge-text">Full Stack Developer & SDE Candidate</span>
           </div>
 
-          {/* Exact Headline: ~3 Lines on Desktop */}
+          {/* Exact Headline */}
           <h1 className="hero-title">
-            Hi, I'm <span className="name-gradient">{personalInfo.name}</span>,<br />
-            Full Stack Developer &<br />
-            Aspiring Software Engineer.
+            I build web products that solve <span className="name-gradient">real problems.</span>
           </h1>
 
-          {/* Supporting Copy (2-3 lines on desktop) */}
+          {/* Exact Supporting Paragraph */}
           <p className="hero-subtitle">
-            I build responsive full-stack applications with React, Node.js, and MongoDB, 
-            backed by hands-on engineering internship experience and disciplined algorithmic problem solving in Java.
+            I'm Kamaljeet Kaur, a Computer Science Engineering student and Full Stack Developer Intern at VenueBook. I work across frontend interfaces, backend APIs and databases, and I'm interested in building reliable software and AI-powered applications that solve practical problems.
           </p>
 
-          {/* Skills Bullets */}
-          <div className="hero-bullets">
-            <div className="hero-bullet">
-              <CheckCircle2 size={16} className="bullet-icon" />
-              <span>Full-Stack Development with React, Node.js & MongoDB</span>
-            </div>
-            <div className="hero-bullet">
-              <CheckCircle2 size={16} className="bullet-icon" />
-              <span>Algorithmic Problem Solving in Java (DSA)</span>
-            </div>
-            <div className="hero-bullet">
-              <CheckCircle2 size={16} className="bullet-icon" />
-              <span>RESTful API Development & Microservices Architecture</span>
-            </div>
-          </div>
-
-          {/* Calls to Action */}
+          {/* Two Prominent Action Buttons */}
           <div className="hero-actions">
             <a href="#projects" className="btn btn-primary">
-              <span>View Projects</span>
+              <span>Explore My Work</span>
               <ArrowRight size={16} />
             </a>
             
@@ -67,15 +44,11 @@ export default function Hero() {
               rel="noopener noreferrer"
             >
               <FileDown size={16} />
-              <span>Download Resume</span>
-            </a>
-
-            <a href="#contact" className="btn btn-outline">
-              <span>Contact Me</span>
+              <span>View Résumé</span>
             </a>
           </div>
 
-          {/* Social Links Neatly Below CTAs */}
+          {/* Understated Social Links */}
           <div className="hero-socials">
             <span className="socials-label">Connect:</span>
             <a 
@@ -112,23 +85,22 @@ export default function Hero() {
 
         </div>
 
-        {/* Right Column: 45% Portrait with Restrained Styling */}
+        {/* Right Column: Clean Portrait */}
         <div className="hero-visual">
           <div className="portrait-container">
             
-            {/* Elegant Shaped Image Frame */}
+            {/* Elegant Portrait Frame */}
             <div className="portrait-frame">
               <img 
                 src={personalInfo.profileImage} 
-                alt={`${personalInfo.name} - Full Stack Developer & Aspiring Software Engineer`} 
+                alt={`${personalInfo.name} - Full Stack Developer Intern at VenueBook`} 
                 className="portrait-img"
                 fetchPriority="high"
               />
               <div className="portrait-gradient-overlay"></div>
 
-              {/* Floating Role Card on Profile Picture */}
+              {/* Tasteful Role Caption */}
               <div className="portrait-floating-card">
-                <span className="floating-dot"></span>
                 <div className="floating-card-body">
                   <span className="floating-card-tag">CURRENT ROLE</span>
                   <span className="floating-card-text">Full Stack Intern @ VenueBook</span>
@@ -136,23 +108,12 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* Exactly Two Compact Badges (Positioned cleanly without covering face) */}
-            <div className="portrait-badge badge-top-right">
-              <Layers size={14} className="text-cyan" />
-              <span>MERN Stack</span>
-            </div>
-
-            <div className="portrait-badge badge-bottom-left">
-              <Terminal size={14} className="text-cyan" />
-              <span>Java DSA</span>
-            </div>
-
           </div>
         </div>
 
       </div>
 
-      {/* Clean Statistics Section Below Hero */}
+      {/* Clean Statistics Row */}
       <div className="container hero-stats-container">
         <div className="stats-grid">
           {personalInfo.stats.map((stat, idx) => (

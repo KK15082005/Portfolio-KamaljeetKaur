@@ -9,17 +9,16 @@ import {
   CheckCircle2, 
   AlertCircle, 
   Loader2, 
-  Sparkles,
   MessageSquare
 } from 'lucide-react';
 import { Github, Linkedin, Instagram } from './BrandIcons';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
-    Name: '',
-    'E-mail': '',
-    'Mobile-No': '',
-    Message: ''
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
   });
 
   const [status, setStatus] = useState('idle'); // idle | submitting | success | error
@@ -27,7 +26,7 @@ export default function Contact() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
       [name]: value
     }));
@@ -35,39 +34,95 @@ export default function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Client-side validation
+    if (!formData.name.trim() || !formData.email.trim() || !formData.subject.trim() || !formData.message.trim()) {
+      setStatus('error');
+      setFeedbackMsg('Please complete all required fields before sending.');
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      setStatus('error');
+      setFeedbackMsg('Please enter a valid email address.');
+      return;
+    }
+
     setStatus('submitting');
     setFeedbackMsg('');
 
     try {
-      const formPayload = new FormData();
-      formPayload.append('Name', formData.Name);
-      formPayload.append('E-mail', formData['E-mail']);
-      formPayload.append('Mobile-No', formData['Mobile-No']);
-      formPayload.append('Message', formData.Message);
+      const web3FormsKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+      const formspreeEndpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT;
 
-      await fetch(personalInfo.googleSheetWebhook, {
-        method: 'POST',
-        body: formPayload,
-        mode: 'no-cors' // Google Apps Script standard handling
-      });
+      if (web3FormsKey) {
+        // Web3Forms delivery option
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({
+            access_key: web3FormsKey,
+            name: formData.name,
+            email: formData.email,
+            subject: formData.subject,
+            message: formData.message,
+            from_name: formData.name
+          })
+        });
+
+        const data = await response.json();
+        if (!response.ok || !data.success) {
+          throw new Error(data.message || 'Submission failed');
+        }
+      } else if (formspreeEndpoint) {
+        // Formspree delivery option
+        const response = await fetch(formspreeEndpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            subject: formData.subject,
+            message: formData.message
+          })
+        });
+
+        if (!response.ok) {
+          throw new Error('Formspree delivery failed');
+        }
+      } else if (personalInfo.googleSheetWebhook) {
+        // Default Google Apps Script webhook integration
+        const formPayload = new FormData();
+        formPayload.append('Name', formData.name);
+        formPayload.append('E-mail', formData.email);
+        formPayload.append('Subject', formData.subject);
+        formPayload.append('Message', formData.message);
+
+        await fetch(personalInfo.googleSheetWebhook, {
+          method: 'POST',
+          body: formPayload,
+          mode: 'no-cors'
+        });
+      }
 
       setStatus('success');
-      setFeedbackMsg('Thank you! Your message has been sent directly to Kamaljeet.');
+      setFeedbackMsg('Thank you! Your message has been sent successfully. I will get back to you shortly.');
       setFormData({
-        Name: '',
-        'E-mail': '',
-        'Mobile-No': '',
-        Message: ''
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
       });
 
       setTimeout(() => {
         setStatus('idle');
         setFeedbackMsg('');
-      }, 6000);
+      }, 7000);
     } catch (err) {
-      console.error(err);
+      console.error('Contact submission error:', err);
       setStatus('error');
-      setFeedbackMsg('Unable to send message right now. Please email directly at kaur.kamaljeet1505@gmail.com.');
+      setFeedbackMsg(`Unable to send message right now. Please email directly at ${personalInfo.email}.`);
     }
   };
 
@@ -75,16 +130,17 @@ export default function Contact() {
     <section id="contact" className="section contact-section">
       <div className="container">
 
+        {/* Section Header */}
         <div className="section-header">
           <div className="section-chip">
             <Send size={14} />
             <span>Get in Touch</span>
           </div>
           <h2 className="section-title">
-            Let's Build Something <span>Remarkable</span>
+            Have an opportunity or a <span>project in mind?</span>
           </h2>
           <p className="section-desc">
-            Currently open to Full-time Software Engineering roles, Full Stack Internships, and high-impact engineering collaborations.
+            I'm open to Full Stack Developer and Software Engineer opportunities, internships, and meaningful collaborations. If you think my experience could be a good fit for your team, feel free to get in touch. I'd be happy to connect.
           </p>
         </div>
 
@@ -97,28 +153,28 @@ export default function Contact() {
               <div className="contact-status-box">
                 <span className="contact-status-dot"></span>
                 <div>
-                  <div className="contact-status-title">Status: Available</div>
-                  <div className="contact-status-sub">Actively interviewing for SDE / Full Stack roles</div>
+                  <div className="contact-status-title">Status: Open to Opportunities</div>
+                  <div className="contact-status-sub">Seeking Full Stack, SDE & Software Engineer Roles</div>
                 </div>
               </div>
 
-              <h3 className="contact-col-title">Contact Channels</h3>
+              <h3 className="contact-col-title">Direct Communication</h3>
               <p className="contact-col-desc">
-                Whether you have an opportunity, want to discuss scalable MERN/Java architectures, or simply want to connect—reach out!
+                Feel free to email directly, connect via LinkedIn, or reach out regarding roles in Delhi NCR or remote.
               </p>
 
               <div className="contact-channels-list">
-                <a href={`mailto:${personalInfo.email}`} className="contact-channel-item">
+                <a href={`mailto:${personalInfo.email}`} className="contact-channel-item" title="Send direct email">
                   <div className="channel-icon-circle">
                     <Mail size={18} className="text-cyan" />
                   </div>
                   <div className="channel-content">
-                    <div className="channel-label">Email</div>
+                    <div className="channel-label">Direct Email</div>
                     <div className="channel-value">{personalInfo.email}</div>
                   </div>
                 </a>
 
-                <a href={`tel:${personalInfo.phone}`} className="contact-channel-item">
+                <a href={`tel:${personalInfo.phone}`} className="contact-channel-item" title="Call or WhatsApp">
                   <div className="channel-icon-circle">
                     <Phone size={18} className="text-cyan" />
                   </div>
@@ -139,7 +195,7 @@ export default function Contact() {
                 </div>
               </div>
 
-              {/* Social Media Links */}
+              {/* Professional Profiles */}
               <div className="contact-socials-block">
                 <span className="socials-heading">Professional Profiles</span>
                 <div className="contact-social-icons">
@@ -148,7 +204,7 @@ export default function Contact() {
                     target="_blank" 
                     rel="noopener noreferrer" 
                     className="social-btn"
-                    aria-label="LinkedIn"
+                    aria-label="LinkedIn Profile"
                   >
                     <Linkedin size={18} />
                     <span>LinkedIn</span>
@@ -159,7 +215,7 @@ export default function Contact() {
                     target="_blank" 
                     rel="noopener noreferrer" 
                     className="social-btn"
-                    aria-label="GitHub"
+                    aria-label="GitHub Profile"
                   >
                     <Github size={18} />
                     <span>GitHub</span>
@@ -170,7 +226,7 @@ export default function Contact() {
                     target="_blank" 
                     rel="noopener noreferrer" 
                     className="social-btn"
-                    aria-label="Instagram"
+                    aria-label="Instagram Profile"
                   >
                     <Instagram size={18} />
                     <span>Instagram</span>
@@ -188,83 +244,92 @@ export default function Contact() {
                   rel="noopener noreferrer"
                 >
                   <FileDown size={18} />
-                  <span>Download Updated Resume (PDF)</span>
+                  <span>Download Résumé (PDF)</span>
                 </a>
               </div>
 
             </div>
           </div>
 
-          {/* Right Column: Google Sheets Form */}
+          {/* Right Column: Functional Contact Form */}
           <div className="contact-form-col">
             <div className="contact-form-card glass-card">
               <div className="form-card-header">
                 <div className="form-header-badge">
                   <MessageSquare size={16} className="text-cyan" />
-                  <span>Send a Message</span>
+                  <span>Direct Message</span>
                 </div>
-                <h3 className="form-card-title">Send Inquiry Directly</h3>
+                <h3 className="form-card-title">Send a Message</h3>
                 <p className="form-card-sub">
-                  Messages are sent directly to my dashboard via Google Apps Script.
+                  Inquiries are delivered directly to my inbox and tracked dashboard.
                 </p>
               </div>
 
-              <form className="contact-form" onSubmit={handleSubmit}>
+              <form className="contact-form" onSubmit={handleSubmit} noValidate>
                 
+                {/* Name Field */}
                 <div className="form-group">
-                  <label className="form-label">Full Name *</label>
+                  <label htmlFor="contact-name" className="form-label">Name *</label>
                   <input 
+                    id="contact-name"
                     type="text" 
-                    name="Name" 
-                    placeholder="e.g. John Doe"
-                    value={formData.Name}
+                    name="name" 
+                    placeholder="e.g. Alex Sharma"
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="form-input"
+                    required
+                    autoComplete="name"
+                  />
+                </div>
+
+                {/* Email Field */}
+                <div className="form-group">
+                  <label htmlFor="contact-email" className="form-label">Email Address *</label>
+                  <input 
+                    id="contact-email"
+                    type="email" 
+                    name="email" 
+                    placeholder="e.g. alex@company.com"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="form-input"
+                    required
+                    autoComplete="email"
+                  />
+                </div>
+
+                {/* Subject Field */}
+                <div className="form-group">
+                  <label htmlFor="contact-subject" className="form-label">Subject *</label>
+                  <input 
+                    id="contact-subject"
+                    type="text" 
+                    name="subject" 
+                    placeholder="e.g. SDE Opportunity / Technical Inquiry"
+                    value={formData.subject}
                     onChange={handleChange}
                     className="form-input"
                     required
                   />
                 </div>
 
-                <div className="form-row">
-                  <div className="form-group flex-1">
-                    <label className="form-label">Email Address *</label>
-                    <input 
-                      type="email" 
-                      name="E-mail" 
-                      placeholder="e.g. recruiter@company.com"
-                      value={formData['E-mail']}
-                      onChange={handleChange}
-                      className="form-input"
-                      required
-                    />
-                  </div>
-
-                  <div className="form-group flex-1">
-                    <label className="form-label">Phone / Mobile No *</label>
-                    <input 
-                      type="tel" 
-                      name="Mobile-No" 
-                      placeholder="e.g. +91 9876543210"
-                      value={formData['Mobile-No']}
-                      onChange={handleChange}
-                      className="form-input"
-                      required
-                    />
-                  </div>
-                </div>
-
+                {/* Message Field */}
                 <div className="form-group">
-                  <label className="form-label">Your Query / Message *</label>
+                  <label htmlFor="contact-message" className="form-label">Message *</label>
                   <textarea 
-                    name="Message" 
+                    id="contact-message"
+                    name="message" 
                     rows="5"
-                    placeholder="Tell me about your role, project, or collaboration opportunity..."
-                    value={formData.Message}
+                    placeholder="Tell me about your role, project, timeline, or engineering opportunity..."
+                    value={formData.message}
                     onChange={handleChange}
                     className="form-textarea"
                     required
                   ></textarea>
                 </div>
 
+                {/* Submit Action */}
                 <button 
                   type="submit" 
                   className="btn btn-primary submit-btn w-full"
@@ -273,7 +338,7 @@ export default function Contact() {
                   {status === 'submitting' ? (
                     <>
                       <Loader2 size={18} className="animate-spin" />
-                      <span>Transmitting Message...</span>
+                      <span>Sending Message...</span>
                     </>
                   ) : (
                     <>
@@ -283,13 +348,13 @@ export default function Contact() {
                   )}
                 </button>
 
-                {/* Feedback message banner */}
+                {/* Feedback Message Banner */}
                 {feedbackMsg && (
-                  <div className={`form-feedback-banner ${status}`}>
+                  <div className={`form-feedback-banner ${status}`} role="alert">
                     {status === 'success' ? (
-                      <CheckCircle2 size={18} className="text-emerald" />
+                      <CheckCircle2 size={18} className="text-emerald flex-shrink-0" />
                     ) : (
-                      <AlertCircle size={18} className="text-rose" />
+                      <AlertCircle size={18} className="text-rose flex-shrink-0" />
                     )}
                     <span>{feedbackMsg}</span>
                   </div>
