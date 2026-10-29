@@ -20,16 +20,13 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
 
-  // Theme Management (Default: Warm Editorial Light Theme, with Deep Charcoal Dark Theme option)
+  // Theme Management (Default: Deep Charcoal Dark Theme)
   const [theme, setTheme] = useState(() => {
     if (typeof window !== 'undefined') {
       const saved = localStorage.getItem('portfolio-theme');
       if (saved) return saved;
-      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        return 'dark';
-      }
     }
-    return 'light';
+    return 'dark';
   });
 
   useEffect(() => {
