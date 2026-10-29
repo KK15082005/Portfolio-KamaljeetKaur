@@ -99,6 +99,26 @@
   display: block;
 }
 
+.brand-logo-img.logo-dark {
+  display: none;
+}
+.brand-logo-img.logo-light {
+  display: block;
+}
+
+[data-theme="dark"] .brand-logo-img.logo-light {
+  display: none;
+}
+[data-theme="dark"] .brand-logo-img.logo-dark {
+  display: block;
+}
+
+[data-theme="dark"] .brand-symbol {
+  background: var(--bg-surface);
+  border-color: rgba(183, 217, 76, 0.25);
+  box-shadow: 0 0 12px rgba(183, 217, 76, 0.12);
+}
+
 .brand-text {
   display: flex;
   flex-direction: column;

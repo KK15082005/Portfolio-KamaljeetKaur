@@ -19,7 +19,8 @@ export default function Footer() {
         <div className="footer-top-row">
           <div className="footer-brand">
             <div className="brand-symbol">
-              <img src="/logo.png" alt="Kamaljeet Kaur Logo" className="brand-logo-img" />
+              <img src="/logo-light.png" alt="Kamaljeet Kaur Logo" className="brand-logo-img logo-light" />
+              <img src="/logo-dark.png" alt="Kamaljeet Kaur Logo" className="brand-logo-img logo-dark" />
             </div>
             <div>
               <span className="footer-brand-name">{personalInfo.name}</span>
