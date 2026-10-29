@@ -56,7 +56,7 @@ export default function About() {
         {/* TOP ROW: Balanced Two-Column Intro (Photo & Bio) */}
         <div className="about-grid">
           
-          {/* Left Column: Image & Highlights */}
+          {/* Left Column: Image & Overlay Card */}
           <div className="about-visual">
             <div className="about-frame">
               <img 
@@ -67,23 +67,11 @@ export default function About() {
                 decoding="async"
               />
               <div className="about-badge-card">
-                <GraduationCap size={22} className="text-cyan" />
+                <GraduationCap size={22} className="about-badge-icon" />
                 <div>
                   <div className="about-badge-title">B.Tech CSE (2023–27)</div>
-                  <div className="about-badge-sub">Computer Science & Engineering</div>
+                  <div className="about-badge-sub">Full Stack Intern @ VenueBook • DSA TA</div>
                 </div>
-              </div>
-            </div>
-
-            {/* Quick credentials strip under photo */}
-            <div className="about-visual-highlights">
-              <div className="visual-highlight-chip">
-                <span className="highlight-dot"></span>
-                <span>Full Stack Intern @ VenueBook</span>
-              </div>
-              <div className="visual-highlight-chip">
-                <span className="highlight-dot"></span>
-                <span>DSA Teaching Assistant (Java)</span>
               </div>
             </div>
           </div>
