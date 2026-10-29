@@ -37,7 +37,7 @@ export default function Navbar() {
     localStorage.setItem('portfolio-theme', theme);
     const favicon = document.querySelector("link[rel*='icon']");
     if (favicon) {
-      favicon.href = theme === 'dark' ? '/logo-dark.png' : '/logo-light.png';
+      favicon.href = '/logo.png';
     }
   }, [theme]);
 
@@ -97,8 +97,7 @@ export default function Navbar() {
         {/* Brand Logo */}
         <a href="#home" className="nav-brand">
           <div className="brand-symbol">
-            <img src="/logo-light.png" alt="Kamaljeet Kaur Logo" className="brand-logo-img logo-light" />
-            <img src="/logo-dark.png" alt="Kamaljeet Kaur Logo" className="brand-logo-img logo-dark" />
+            <img src="/logo.png" alt="Kamaljeet Kaur Logo" className="brand-logo-img" />
           </div>
           <div className="brand-text">
             <span className="brand-name">{personalInfo.name}</span>
@@ -179,10 +178,10 @@ export default function Navbar() {
               >
                 {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
               </button>
-              <button 
-                type="button" 
-                className="drawer-close" 
-                onClick={() => setMobileMenuOpen(false)} 
+              <button
+                type="button"
+                className="drawer-close"
+                onClick={() => setMobileMenuOpen(false)}
                 aria-label="Close menu"
               >
                 <X size={20} />

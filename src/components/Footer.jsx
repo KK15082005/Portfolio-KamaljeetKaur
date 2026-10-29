@@ -1,9 +1,9 @@
 import React from 'react';
 import { personalInfo } from '../data/portfolioData';
-import { 
-  ArrowUp, 
-  Heart, 
-  Sparkles 
+import {
+  ArrowUp,
+  Heart,
+  Sparkles
 } from 'lucide-react';
 import { Github, Linkedin, Instagram } from './BrandIcons';
 
@@ -15,12 +15,11 @@ export default function Footer() {
   return (
     <footer className="footer-wrapper">
       <div className="container footer-container">
-        
+
         <div className="footer-top-row">
           <div className="footer-brand">
             <div className="brand-symbol">
-              <img src="/logo-light.png" alt="Kamaljeet Kaur Logo" className="brand-logo-img logo-light" />
-              <img src="/logo-dark.png" alt="Kamaljeet Kaur Logo" className="brand-logo-img logo-dark" />
+              <img src="/logo.png" alt="Kamaljeet Kaur Logo" className="brand-logo-img" />
             </div>
             <div>
               <span className="footer-brand-name">{personalInfo.name}</span>
@@ -38,9 +37,9 @@ export default function Footer() {
             <a href="#contact">Contact</a>
           </div>
 
-          <button 
+          <button
             type="button"
-            className="scroll-top-btn" 
+            className="scroll-top-btn"
             onClick={scrollToTop}
             aria-label="Scroll to top"
           >
@@ -56,25 +55,25 @@ export default function Footer() {
           </p>
 
           <div className="footer-socials">
-            <a 
-              href={personalInfo.socials.linkedin} 
-              target="_blank" 
+            <a
+              href={personalInfo.socials.linkedin}
+              target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
             >
               <Linkedin size={18} />
             </a>
-            <a 
-              href={personalInfo.socials.github} 
-              target="_blank" 
+            <a
+              href={personalInfo.socials.github}
+              target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
             >
               <Github size={18} />
             </a>
-            <a 
-              href={personalInfo.socials.instagram} 
-              target="_blank" 
+            <a
+              href={personalInfo.socials.instagram}
+              target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
             >
