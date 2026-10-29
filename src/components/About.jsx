@@ -46,10 +46,10 @@ export default function About() {
             <span>About Me</span>
           </div>
           <h2 className="section-title">
-            Engineering with <span>Purpose & Precision</span>
+            Engineering with <span>Purpose & Discipline</span>
           </h2>
           <p className="section-desc">
-            Bridging strong algorithmic foundations with modern full-stack development to build dependable, user-focused products.
+            Bridging strong software engineering foundations with practical full-stack development to build dependable web applications.
           </p>
         </div>
 
@@ -93,13 +93,10 @@ export default function About() {
             <div className="bio-card glass-card">
               <h3 className="bio-title">Hello, I'm Kamaljeet Kaur</h3>
               <p className="bio-text">
-                I'm a Computer Science Engineering student focused on building robust, responsive web applications and solving complex algorithmic challenges. My core strengths are in the <strong>MERN stack (React, Node.js, Express, MongoDB)</strong> and <strong>Data Structures & Algorithms in Java</strong>.
+                I'm a Computer Science Engineering student graduating in 2027, with hands-on experience in full-stack development and building web applications. During my internship at VenueBook, I've worked on frontend improvements, backend integration, APIs and database-related tasks.
               </p>
               <p className="bio-text">
-                As a <strong>Full Stack Developer Intern</strong> at <strong>VenueBook</strong>, I contribute to the core booking platform, develop RESTful microservices, and optimize MongoDB data queries. Alongside development, I serve as a <strong>DSA Teaching Assistant</strong>, mentoring 100+ students in algorithmic problem-solving and clean code practices.
-              </p>
-              <p className="bio-text">
-                I am driven by practical engineering, readable architectures, and continuous technical growth. I am actively preparing for <strong>Software Development Engineer (SDE)</strong> and <strong>Full Stack Developer</strong> opportunities at product-driven technology companies.
+                Alongside my internship, I'm building PrepPilot AI, an AI-powered interview preparation platform, and strengthening my problem-solving and software engineering fundamentals. I enjoy understanding how applications work end to end, from the user interface to the database, and continuously improving through practical development.
               </p>
 
               {/* Quick Info Grid */}

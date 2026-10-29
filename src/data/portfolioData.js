@@ -8,8 +8,8 @@
 
 export const personalInfo = {
   name: "Kamaljeet Kaur",
-  headline: "Full Stack Developer & Aspiring Software Engineer",
-  tagline: "Building responsive full-stack applications with React, Node.js, and MongoDB, backed by hands-on engineering internship experience and strong algorithmic problem solving in Java.",
+  headline: "I build web products that solve real problems.",
+  tagline: "I'm Kamaljeet Kaur, a Computer Science Engineering student and Full Stack Developer Intern at VenueBook. I work across frontend interfaces, backend APIs and databases, and I'm interested in building reliable software and AI-powered applications that solve practical problems.",
   location: "New Delhi, India",
   email: "kaur.kamaljeet1505@gmail.com",
   phone: "+91 9811529947",
@@ -45,11 +45,11 @@ export const skillsData = {
     { name: "React.js", focus: "Hooks & Component Architecture", icon: "Atom" },
     { name: "Next.js", focus: "SSR & Static Generation", icon: "Globe" },
     { name: "HTML5", focus: "Semantic Structure & Accessibility", icon: "Layout" },
-    { name: "CSS3", focus: "Responsive Design & Glassmorphism", icon: "Palette" },
+    { name: "CSS3", focus: "Responsive & Modern Design", icon: "Palette" },
     { name: "Tailwind CSS", focus: "Utility-First Responsive Styling", icon: "Sparkles" },
     { name: "Bootstrap", focus: "Component Layout Systems", icon: "Layers" }
   ],
-  "Backend": [
+  "Backend and APIs": [
     { name: "Node.js", focus: "Asynchronous Event-Driven Runtime", icon: "Server" },
     { name: "Express.js", focus: "RESTful API Design & Middleware", icon: "Network" },
     { name: "REST APIs", focus: "Client-Server Architecture", icon: "Share2" },
@@ -65,9 +65,14 @@ export const skillsData = {
     { name: "Git & GitHub", focus: "Version Control & Code Review", icon: "GitBranch" },
     { name: "Postman", focus: "API Testing & Endpoint Debugging", icon: "Send" },
     { name: "VS Code", focus: "IDE & Tooling Ecosystem", icon: "FileCode" },
+    { name: "Netlify", focus: "Frontend Hosting & CI/CD", icon: "Zap" },
+    { name: "Linux / Terminal", focus: "Shell & Environment", icon: "Terminal" }
+  ],
+  "AI Integrations": [
     { name: "Google Gemini API", focus: "LLM Integration & Prompting", icon: "Bot" },
-    { name: "Azure OpenAI & Cloud", focus: "AI Services & App Deployment", icon: "Cloud" },
-    { name: "Netlify", focus: "Frontend Hosting & CI/CD", icon: "Zap" }
+    { name: "Azure OpenAI", focus: "Enterprise AI Services", icon: "Cloud" },
+    { name: "Prompt Engineering", focus: "Structured Outputs & Evaluation", icon: "Sparkles" },
+    { name: "AI Workflows", focus: "End-to-End Generative Features", icon: "Cpu" }
   ]
 };
 
@@ -291,27 +296,72 @@ export const servicesData = [
 export const initialProjectsData = [
   {
     id: "preppilot-ai",
-    title: "PrepPilot-AI",
+    title: "PrepPilot AI",
     category: "AI & Full-Stack",
-    tagline: "AI-Powered Technical Interview & Mentorship Platform",
-    period: "2024",
+    tagline: "AI-Powered Technical & HR Interview Preparation Platform",
+    period: "2024 – 2026",
     featured: true,
     image: "/preppilot-ai.png",
     demoUrl: "https://deft-centaur-5d366c.netlify.app/",
     githubUrl: "https://github.com",
     metrics: "Microsoft Imagine Cup '26 Entry",
-    problem: "Engineering candidates and students often lack access to realistic, role-tailored technical interview simulations and structured, objective feedback before high-stakes hiring rounds.",
-    description: "An autonomous full-stack AI interview preparation platform that generates personalized technical, coding, and behavioral interview sessions based on the candidate's target job role and skill level.",
-    contribution: "Architected and implemented the end-to-end web application: designed secure JWT-authenticated REST APIs with Node.js/Express, built responsive React dashboard views with Axios, and integrated Google Gemini API for dynamic question generation and real-time response analysis.",
-    technicalDecisions: "Selected MongoDB for flexible storage of multi-format interview transcripts and dynamic evaluation criteria. Implemented modular service layers to decouple LLM prompt management from route handling, ensuring reliable API error handling and fast UI response.",
+    problem: "Engineering students and candidates often lack realistic, objective interview practice and actionable technical feedback before crucial hiring rounds.",
+    description: "PrepPilot AI is an interview preparation platform designed to help students practise technical and HR interviews through personalised questions and AI-assisted feedback. I'm developing the application with a focus on authentication, interview configuration, question generation and evaluation workflows.",
+    contribution: "Architected the full-stack MERN platform: developed secure JWT authentication with bcrypt, created interview session orchestration routes, built the responsive React user interface, and integrated Google Gemini API for intelligent question generation and structured evaluations.",
+    technicalDecisions: "Decoupled LLM prompt orchestration into dedicated backend service modules to enable resilient error handling and graceful fallbacks. Used MongoDB for flexible interview transcripts and evaluation telemetry.",
     highlights: [
-      "Full-stack MERN architecture integrated with Google Gemini API for dynamic question generation.",
-      "Secure JWT authentication with bcrypt password encryption and protected API route middleware.",
-      "Interactive multi-step interview simulator supporting live response evaluation and scoring.",
-      "Responsive React dashboard providing detailed performance analytics and topic breakdown across 5+ views.",
-      "Evaluated as a Microsoft Imagine Cup project based on innovation, technical execution, and user impact."
+      "AI-driven question generation and feedback pipeline powered by Google Gemini API.",
+      "Secure JWT authentication with bcrypt password hashing and protected API middleware.",
+      "Dynamic interview simulator supporting real-time candidate evaluations and scoring rubrics.",
+      "Multi-view React dashboard delivering detailed strengths, gaps, and performance analytics.",
+      "Evaluated as a Microsoft Imagine Cup project based on innovation, feasibility, and technical execution."
     ],
     tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Google Gemini API", "JWT", "Axios", "REST APIs"]
+  },
+  {
+    id: "venuebook-platform",
+    title: "VenueBook Platform Contributions",
+    category: "Full-Stack",
+    tagline: "Full-Stack Internship Contributions for Venue Booking Workflows",
+    period: "Aug 2026 – Present",
+    featured: true,
+    image: "/project4.png",
+    demoUrl: "",
+    githubUrl: "",
+    metrics: "Internship Contributions",
+    problem: "Modernizing core venue booking workflows, optimizing backend API response latency, and reducing redundant database queries across customer-facing event scheduling features.",
+    description: "Engineering contributions as a Full Stack Developer Intern at VenueBook. Developed modular React UI components, built and integrated RESTful Express microservices, and optimized MongoDB query patterns to enhance application performance across key customer booking flows.",
+    contribution: "Built reusable frontend UI components in React, integrated backend REST endpoints, optimized MongoDB queries to cut down unnecessary database hits, and assisted in production debugging and technical documentation.",
+    technicalDecisions: "Implemented indexed query filters in MongoDB to optimize read latency for booking searches. Decoupled UI state management to reduce unnecessary re-renders in dynamic booking calendars.",
+    highlights: [
+      "Built and deployed modular React.js UI components improving core user booking journeys.",
+      "Integrated secure RESTful APIs with Node.js and Express to streamline reservation workflows.",
+      "Optimized MongoDB query performance and schema access patterns for faster response times.",
+      "Identified and resolved production bugs, enhancing overall system stability."
+    ],
+    tech: ["React.js", "Node.js", "Express.js", "MongoDB", "REST APIs", "JavaScript"]
+  },
+  {
+    id: "kanban-board",
+    title: "Interactive Kanban Board",
+    category: "Full-Stack",
+    tagline: "Interactive Task & Workflow Management Application",
+    period: "2026",
+    featured: true,
+    image: "/KB.png",
+    demoUrl: "https://fancy-tiramisu-85ef54.netlify.app/",
+    githubUrl: "https://github.com/KK15082005/KanabanBoard",
+    metrics: "Production Web App",
+    problem: "Teams and developers need a clean, zero-friction interface to visualize task progression, organize deliverables across stages, and maintain sprint momentum.",
+    description: "A task management board that helps users organise work across different stages. The project focuses on interactive task management, drag-and-drop functionality and a clean, responsive interface.",
+    contribution: "Built the drag-and-drop state management system in React, implemented persistent board state, and crafted responsive, accessible UI layouts.",
+    technicalDecisions: "Structured component state to ensure fluid drag-and-drop interactions with zero layout shifts and instant visual reordering across columns.",
+    highlights: [
+      "Fluid drag-and-drop task movement between configurable workflow columns.",
+      "Real-time task creation, editing, status updating, and deletion.",
+      "Clean, modern, and responsive user interface across desktop and mobile screens."
+    ],
+    tech: ["React.js", "JavaScript", "HTML5", "CSS3", "Netlify"]
   },
   {
     id: "tradepulse",
@@ -319,20 +369,19 @@ export const initialProjectsData = [
     category: "Full-Stack",
     tagline: "Real-Time Stock Market Tracking & Portfolio Platform",
     period: "2024",
-    featured: true,
+    featured: false,
     image: "/project1.png",
     demoUrl: "https://github.com",
     githubUrl: "https://github.com",
     metrics: "Full-Stack Simulation",
     problem: "Aspiring investors need a risk-free, responsive platform to track real-time market trends, test portfolio strategies, and observe virtual order executions without capital risk.",
     description: "A financial analytics and portfolio tracking web application featuring interactive price charts, customizable watchlists, and virtual holdings calculation.",
-    contribution: "Developed the backend REST APIs using Node.js and Express for trade logging and watchlist management; built the interactive frontend trading dashboard with React and Chart.js.",
-    technicalDecisions: "Structured MongoDB schemas to segregate market tickers, user accounts, and virtual trade ledgers. Optimized database queries with indexed user IDs to maintain sub-100ms response times for portfolio updates.",
+    contribution: "Developed backend REST APIs using Node.js and Express for trade logging and watchlist management; built the interactive frontend trading dashboard with React and Chart.js.",
+    technicalDecisions: "Structured MongoDB schemas to segregate market tickers, user accounts, and virtual trade ledgers. Optimized queries with indexed user IDs.",
     highlights: [
       "Responsive React trading dashboard with real-time Chart.js market visualizations.",
-      "RESTful API backend handling virtual order placement, holdings calculations, and watchlist syncing.",
-      "JWT-based session authentication with protected user transaction history.",
-      "Normalized MongoDB schemas designed for scalability and rapid data retrieval."
+      "RESTful API backend handling virtual order placement and watchlist syncing.",
+      "JWT-based session authentication with protected user transaction history."
     ],
     tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Chart.js", "REST APIs", "JWT", "Bootstrap"]
   },
@@ -394,26 +443,12 @@ export const initialProjectsData = [
     problem: "Delivering immersive 3D folding and unfolding card animations using pure CSS without the overhead of heavy third-party 3D canvas libraries.",
     description: "An engaging interactive card web application built with multi-stage CSS keyframes, 3D hover transformations, and dynamic mouse interaction states.",
     contribution: "Crafted complex multi-stage CSS animation timelines and integrated user interaction event listeners in JavaScript.",
-    technicalDecisions: "Used transform-style: preserve-3d and GPU-accelerated CSS properties (translate3d, rotate3d) to ensure fluid 60fps rendering across devices.",
+    technicalDecisions: "Used transform-style: preserve-3d and GPU-accelerated CSS properties to ensure fluid 60fps rendering across devices.",
     highlights: [
       "Multi-stage 3D card folding and unfolding states driven by pure CSS keyframes.",
       "Hardware-accelerated perspective calculations for realistic spatial depth.",
       "Interactive audio-visual greeting triggers responsive to user cursor movement."
     ],
     tech: ["CSS3 Keyframes", "3D Transforms", "JavaScript", "Netlify"]
-  },
-  {
-    id: "kanban-board",
-    title: "Kanban Board",
-    category: "Full-Stack",
-    tagline: "Built a responsive Kanban board with drag-and-drop functionality to move tasks between columns and manage workflows efficiently.",
-    period: "Aug 2026",
-    featured: true,
-    image: "/KB.png",
-    demoUrl: "https://fancy-tiramisu-85ef54.netlify.app/",
-    githubUrl: "https://github.com/KK15082005/KanabanBoard",
-    metrics: "",
-    description: "Developed a responsive Kanban board with drag-and-drop functionality to move tasks between columns. Built an intuitive interface for task organization, status tracking, and efficient workflow management.",
-    tech: ["React.js", "JavaScript", "HTML5", "CSS3"]
-  },
+  }
 ];

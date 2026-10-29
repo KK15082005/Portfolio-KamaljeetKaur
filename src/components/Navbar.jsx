@@ -5,13 +5,14 @@ import {
   Menu,
   X,
   Sparkles,
-  ArrowUpRight,
   Code2,
   Briefcase,
   User,
   FolderGit2,
   Send,
-  Layers
+  Layers,
+  Sun,
+  Moon
 } from 'lucide-react';
 
 export default function Navbar() {
@@ -19,12 +20,33 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
 
+  // Theme Management (Default: Warm Editorial Light Theme, with Deep Charcoal Dark Theme option)
+  const [theme, setTheme] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('portfolio-theme');
+      if (saved) return saved;
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        return 'dark';
+      }
+    }
+    return 'light';
+  });
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('portfolio-theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 40);
 
       const sections = ['home', 'about', 'experience', 'skills', 'projects', 'services', 'contact'];
-      const scrollPosition = window.scrollY + 200;
+      const scrollPosition = window.scrollY + 180;
 
       for (const section of sections) {
         const el = document.getElementById(section);
@@ -86,7 +108,7 @@ export default function Navbar() {
         </div>
 
         {/* Desktop Nav */}
-        <nav className="desktop-nav">
+        <nav className="desktop-nav" aria-label="Main Navigation">
           <ul className="nav-list">
             {navLinks.map((link) => (
               <li key={link.name}>
@@ -101,8 +123,19 @@ export default function Navbar() {
           </ul>
         </nav>
 
-        {/* Actions */}
+        {/* Actions (Theme Toggle & Resume) */}
         <div className="nav-actions">
+          {/* Functional Theme Toggle */}
+          <button
+            type="button"
+            className="theme-toggle-btn"
+            onClick={toggleTheme}
+            aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+            title={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+          >
+            {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
+          </button>
+
           <a
             href={personalInfo.resumeUrl}
             download
@@ -131,9 +164,25 @@ export default function Navbar() {
         <div className="mobile-drawer">
           <div className="mobile-drawer-header">
             <span className="drawer-title">Navigation</span>
-            <button type="button" className="drawer-close" onClick={() => setMobileMenuOpen(false)} aria-label="Close menu">
-              <X size={20} />
-            </button>
+            <div className="mobile-drawer-actions">
+              <button
+                type="button"
+                className="theme-toggle-btn mobile-drawer-theme-btn"
+                onClick={toggleTheme}
+                aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+                title={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+              >
+                {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
+              </button>
+              <button 
+                type="button" 
+                className="drawer-close" 
+                onClick={() => setMobileMenuOpen(false)} 
+                aria-label="Close menu"
+              >
+                <X size={20} />
+              </button>
+            </div>
           </div>
           <ul className="mobile-nav-list">
             {navLinks.map((link) => {
